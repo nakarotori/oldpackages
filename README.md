@@ -15,3 +15,6 @@ example:
   src-git routing git://github.com/openwrt-routing/packages.git
   src-git telephony http://feeds.openwrt.nanl.de/openwrt/telephony.git
   
+other possibly interesting repositories:
+  https://github.com/tobiaswaldvogel
+  https://code.google.com/p/mediawrt
