@@ -8,17 +8,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bitlbee
-PKG_VERSION:=1.0.1
-PKG_RELEASE:=2
+PKG_VERSION:=3.2
+PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://get.bitlbee.org/src \
 	http://get.bitlbee.be/src \
 	http://get.us.bitlbee.org/src \
 	http://ftp.snt.utwente.nl/pub/software/bitlbee/src
-PKG_MD5SUM:=a4d7daa9b64898dd41a3a6d104692d9a
+PKG_MD5SUM:=6a8fe98e96a47c636004a245075d5d7c
 
-PKG_BUILD_DEPENDS:=libopenssl glib1
+PKG_BUILD_DEPENDS:=glib2
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
@@ -27,15 +27,58 @@ define Package/bitlbee
   SUBMENU:=Instant Messaging
   SECTION:=net
   CATEGORY:=Network
-  DEPENDS:=+libopenssl +glib1 $(ICONV_DEPENDS)
+  DEPENDS:=+libgnutls +glib2 $(ICONV_DEPENDS)
   TITLE:=IRC gateway to IM chat networks
   URL:=http://www.bitlbee.org/
+endef
+
+define Package/bitlbee/config
+  source "$(SOURCE)/Config.in"
 endef
 
 define Package/bitlbee/conffiles
 /etc/bitlbee/motd.txt
 /etc/bitlbee/bitlbee.conf
 endef
+
+ifeq ($(CONFIG_BITLBEE_ENABLE_SSL),y)
+	EXTRA_CONF_OPTS+= \
+		--ssl=gnutls
+	PKG_BUILD_DEPENDS+= \
+	libgnutls
+else
+	EXTRA_CONF_OPTS:=--ssl=bogus
+endif
+ifneq ($(CONFIG_BITLBEE_MSN),y)
+	EXTRA_CONF_OPTS+= \
+	--msn=0
+endif
+ifneq ($(CONFIG_BITLBEE_JABBER),y)
+	EXTRA_CONF_OPTS+= \
+	--jabber=0
+endif
+ifneq ($(CONFIG_BITLBEE_OSCAR),y)
+	EXTRA_CONF_OPTS+= \
+	--oscar=0
+endif
+ifneq ($(CONFIG_BITLBEE_YAHOO),y)
+	EXTRA_CONF_OPTS+= \
+	--yahoo=0
+endif
+ifneq ($(CONFIG_BITLBEE_TWITTER),y)
+	EXTRA_CONF_OPTS+= \
+	--twitter=0
+endif
+ifneq ($(CONFIG_BITLBEE_ENABLE_PLUGINS),y)
+	EXTRA_CONF_OPTS+= \
+	--plugins=0
+endif
+ifeq ($(CONFIG_BITLBEE_OTR),y)
+	EXTRA_CONF_OPTS+= \
+	--otr=1
+	PKG_BUILD_DEPENDS+= \
+	libotr
+endif
 
 define Build/Configure
 	# it's not GNU autoconf stuff
@@ -51,16 +94,14 @@ define Build/Configure
 			--bindir=/usr/sbin/ \
 			--etcdir=/etc/bitlbee/ \
 			--datadir=/usr/share/bitlbee/ \
+			--plugins=/usr/lib/bitlbee/ \
 			--config=/var/lib/bitlbee/ \
 			--arch=OpenWrt \
 			--cpu="$(ARCH)" \
 			--debug=0 \
 			--strip=1 \
-			--sizeopt=1 \
 			--ipv6=1 \
-			--ssl=openssl \
-			--glib1=1 \
-			--glib1prefix="$(STAGING_DIR)/usr" \
+			$(EXTRA_CONF_OPTS) \
 	);
 	$(SED) 's,^CFLAGS=.*,CFLAGS=$(TARGET_CFLAGS),g'\
 		$(PKG_BUILD_DIR)/Makefile.settings
