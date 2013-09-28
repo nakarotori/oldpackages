@@ -19,3 +19,4 @@ other possibly interesting repositories:
     
     https://github.com/tobiaswaldvogel
     https://code.google.com/p/mediawrt
+    https://github.com/FranciscoBorges/openwrt-printing-packages
