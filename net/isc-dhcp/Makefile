@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2006-2012 OpenWrt.org
+# Copyright (C) 2006-2013 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -9,12 +9,12 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=isc-dhcp
 UPSTREAM_NAME:=dhcp
-PKG_VERSION:=4.2.4
-PKG_RELEASE:=3
+PKG_VERSION:=4.2.5-P1
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(UPSTREAM_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=ftp://ftp.isc.org/isc/dhcp/$(PKG_VERSION)
-PKG_MD5SUM:=c244cefe663d43100af757d8ff625a1f
+PKG_MD5SUM:=f68e3c1f00a9af5742bc5e71d567cf93
 
 PKG_FIXUP:=autoreconf
 PKG_BUILD_PARALLEL:=1
