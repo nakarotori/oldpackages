@@ -95,6 +95,7 @@ CONFIGURE_ARGS += \
 	--enable-epoll=yes \
 	--with-gost=no \
 	--with-gssapi=no \
+	--with-ecdsa=no \
 	--with-readline=no
 
 CONFIGURE_VARS += \
