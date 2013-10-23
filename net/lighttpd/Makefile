@@ -177,3 +177,4 @@ $(eval $(call BuildPlugin,trigger_b4_dl,Trigger before download,+libpcre,10))
 $(eval $(call BuildPlugin,userdir,User directory,,10))
 $(eval $(call BuildPlugin,usertrack,User tracking,,10))
 $(eval $(call BuildPlugin,webdav,WebDAV,+libsqlite3 +libuuid +libxml2,10))
+
