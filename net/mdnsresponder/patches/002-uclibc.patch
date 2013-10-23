@@ -1,7 +1,6 @@
-diff -u --recursive mDNSResponder-214.3.2-vanilla/mDNSPosix/Makefile mDNSResponder-214.3.2/mDNSPosix/Makefile
---- mDNSResponder-214.3.2-vanilla/mDNSPosix/Makefile	2010-10-15 08:38:44.798283212 -0500
-+++ mDNSResponder-214.3.2/mDNSPosix/Makefile	2010-10-15 08:48:27.334503432 -0500
-@@ -361,12 +361,16 @@
+--- a/mDNSPosix/Makefile
++++ b/mDNSPosix/Makefile
+@@ -362,12 +362,16 @@ STRIP = strip
  endif
  else
  
