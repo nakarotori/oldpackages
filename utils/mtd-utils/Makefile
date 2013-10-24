@@ -70,7 +70,7 @@ define Package/mtd-utils-$(subst _,-,$(firstword $(subst :, ,$(1))))
   URL:=http://www.linux-mtd.infradead.org/
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=mtd-utils $(wordlist 2,$(words $(subst :, ,$(1))),$(subst :, ,$(1)))
+  DEPENDS:=mtd-utils zlib $(wordlist 2,$(words $(subst :, ,$(1))),$(subst :, ,$(1)))
 endef
 endef
 
