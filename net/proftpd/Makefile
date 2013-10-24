@@ -26,7 +26,6 @@ define Package/proftpd
   CATEGORY:=Network
   TITLE:=ProFTPD FTP server
   URL:=http://www.proftpd.org/
-  DEPENDS:=+libpam
   MAINTAINER:=Cezary Jackiewicz <cezary@eko.one.pl>
 endef
 
@@ -44,6 +43,7 @@ MAKE_FLAGS += \
 CONFIGURE_ARGS += \
 	--disable-cap \
 	--enable-devel \
+	--disable-auth-pam \
 	ac_cv_header_curses_h=no \
 	ac_cv_header_ncurses_h=no
 
