@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2008-2012 OpenWrt.org
+# Copyright (C) 2008-2013 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -20,7 +20,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/at
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+libelf1
+  DEPENDS:=+libelf1 +libpam
   TITLE:=Delayed job execution and batch processing
   URL:=http://packages.debian.org/stable/at
   MAINTAINER:=Luka Perkov <openwrt@lukaperkov.net>
