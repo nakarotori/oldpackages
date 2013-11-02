@@ -8,20 +8,21 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=uhub
-PKG_VERSION:=0.2.8
-PKG_RELEASE:=3
+PKG_VERSION:=0.4.1
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-src.tar.gz
 PKG_SOURCE_URL:=http://www.extatic.org/downloads/uhub/
-PKG_MD5SUM:=45d35d9757bc0a84297dec51520f725b
+PKG_MD5SUM:=a225f0db52f4ba5a8c45eabf625ec708
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/cmake.mk
 
 define Package/uhub
   SUBMENU:=P2P
   SECTION:=net
   CATEGORY:=Network
-  DEPENDS:=+libevent
+  DEPENDS:=+libpthread +libopenssl
   TITLE:=High performance ADC hub
   URL:=http://www.extatic.org/uhub/
 endef
@@ -31,9 +32,6 @@ define Package/uhub/description
         Its low memory footprint allows it to handle several thousand users
         on high-end servers, or a small private hub on embedded hardware.
 endef
-
-TARGET_CFLAGS += -I$(STAGING_DIR)/usr/include/libevent
-TARGET_LDFLAGS = -L$(STAGING_DIR)/usr/lib/libevent -L$(STAGING_DIR)/usr/lib -L$(STAGING_DIR)/lib
 
 ifdef CONFIG_USE_EGLIBC
 TARGET_LDFLAGS += -lrt
