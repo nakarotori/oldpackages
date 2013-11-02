@@ -29,13 +29,13 @@ define Package/vsftpd/Default
 endef
 
 
-define Package/vsftpd
+define Package/vsftpd-notls
 $(call Package/vsftpd/Default)
   VARIANT:=notls
   TITLE+= (no TLS)
 endef
 
-define Package/vsftpd-tls
+define Package/vsftpd
 $(call Package/vsftpd/Default)
   VARIANT:=tls
   TITLE+= (TLS)
@@ -46,7 +46,7 @@ define Package/vsftpd/conffiles
 /etc/vsftpd.conf
 endef
 
-Package/vsftpd-tls/conffiles=$(Package/vsftpd/conffiles)
+Package/vsftpd-notls/conffiles=$(Package/vsftpd/conffiles)
 
 ifeq ($(BUILD_VARIANT),notls)
  define Build/Compile
@@ -79,7 +79,7 @@ define Package/vsftpd/install
 	$(INSTALL_BIN) ./files/$(PKG_NAME).init $(1)/etc/init.d/$(PKG_NAME)
 endef
 
-Package/vsftpd-tls/install=$(Package/vsftpd/install)
+Package/vsftpd-notls/install=$(Package/vsftpd/install)
 
 $(eval $(call BuildPackage,vsftpd))
-$(eval $(call BuildPackage,vsftpd-tls))
+$(eval $(call BuildPackage,vsftpd-notls))
