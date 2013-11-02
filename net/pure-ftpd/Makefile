@@ -30,13 +30,13 @@ define Package/pure-ftpd/Default
   URL:=http://www.pureftpd.org/project/pure-ftpd
 endef
 
-define Package/pure-ftpd
+define Package/pure-ftpd-notls
   $(call Package/pure-ftpd/Default)
   TITLE+= (no TLS)
   VARIANT:=notls
 endef
 
-define Package/pure-ftpd-tls
+define Package/pure-ftpd
   $(call Package/pure-ftpd/Default)
   TITLE+= (TLS)
   VARIANT:=tls
@@ -51,13 +51,13 @@ define Package/pure-ftpd/description
  personal users as well as hosting providers.
 endef
 
-Package/pure-ftpd-tls/description=$(Package/pure-ftpd/description)
+Package/pure-ftpd-notls/description=$(Package/pure-ftpd/description)
 
 define Package/pure-ftpd/conffiles
 /etc/config/pure-ftpd
 endef
 
-Package/pure-ftpd-tls/conffiles=$(Package/pure-ftpd/conffiles)
+Package/pure-ftpd-notls/conffiles=$(Package/pure-ftpd/conffiles)
 
 CONFIGURE_ARGS += \
 	--with-everything \
@@ -86,7 +86,7 @@ define Package/pure-ftpd/install
 		$(1)/usr/sbin/
 endef
 
-Package/pure-ftpd-tls/install=$(Package/pure-ftpd/install)
+Package/pure-ftpd-notls/install=$(Package/pure-ftpd/install)
 
 $(eval $(call BuildPackage,pure-ftpd))
-$(eval $(call BuildPackage,pure-ftpd-tls))
+$(eval $(call BuildPackage,pure-ftpd-notls))
