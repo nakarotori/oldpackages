@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2010-2011 OpenWrt.org
+# Copyright (C) 2010-2013 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,12 +8,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=chaosvpn
-PKG_VERSION:=2.0
-PKG_RELEASE:=3
+PKG_VERSION:=2.17
 
-PKG_SOURCE:=${PKG_NAME}-${PKG_VERSION}.tar.gz
-PKG_SOURCE_URL:=http://github.com/downloads/ryd/chaosvpn/
-PKG_MD5SUM:=4263202d65bf4ab0d1356b149d7c53af
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=git://github.com/ryd/chaosvpn.git
+PKG_REV:=d752e064e00453fcf3200ef8f9a2e75f84c70ec6
+PKG_VERSION:=r20131022
+
+PKG_SOURCE_VERSION:=$(PKG_REV)
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_SOURCE:=$(PKG_SOURCE_SUBDIR).tar.gz
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
 
 include $(INCLUDE_DIR)/package.mk
 
