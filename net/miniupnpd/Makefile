@@ -11,7 +11,8 @@ PKG_NAME:=miniupnpd
 PKG_VERSION:=1.8.20130426
 PKG_RELEASE:=1
 
-PKG_SOURCE_URL:=http://miniupnp.free.fr/files
+PKG_SOURCE_URL:=http://miniupnp.free.fr/files \
+		http://miniupnp.tuxfamily.org/files
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_MD5SUM:=ca5344eba200e4a6d1313849d68310f6
 
