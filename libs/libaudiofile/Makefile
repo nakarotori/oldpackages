@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2006-2010 OpenWrt.org
+# Copyright (C) 2006-2013 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,14 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=audiofile
-PKG_VERSION:=0.2.7
+PKG_VERSION:=0.3.6
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:= \
 	http://github.com/downloads/mpruett/audiofile/ \
 	http://www.68k.org/~michael/audiofile/
-PKG_MD5SUM:=a39be317a7b1971b408805dc5e371862
+PKG_MD5SUM:=2731d79bec0acef3d30d2fc86b0b72fd
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL=1
@@ -26,6 +26,7 @@ define Package/libaudiofile
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=Audio File library
+  DEPENDS:=+libflac +libstdcpp
   URL:=http://www.68k.org/~michael/audiofile/
 endef
 
@@ -44,12 +45,6 @@ TARGET_CFLAGS+= $(FPIC) -std=c99
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin
-	$(CP) \
-		$(PKG_INSTALL_DIR)/usr/bin/audiofile-config \
-		$(2)/bin/
-	$(SED) \
-		's,^\(prefix\|exec_prefix\)=.*,\1=$(STAGING_DIR)/usr,g' \
-		$(2)/bin/audiofile-config
 
 	$(INSTALL_DIR) $(1)/usr/include
 	$(CP) \
