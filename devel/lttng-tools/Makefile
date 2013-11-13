@@ -18,6 +18,9 @@ PKG_MD5SUM:=
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
 
+PKG_FIXUP:=libtool
+PKG_REMOVE_FILES:=aclocal.m4 acinclude.m4 ltmain.sh
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/lttng-tools
