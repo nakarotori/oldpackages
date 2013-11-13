@@ -25,7 +25,7 @@ include $(INCLUDE_DIR)/nls.mk
 define Package/elfutils/Default
   SECTION:=libs
   CATEGORY:=Libraries
-  DEPENDS:=$(INTL_DEPENDS)
+  DEPENDS:=$(INTL_DEPENDS) +liblzma
   TITLE:=ELF manipulation libraries
   URL:=https://fedorahosted.org/elfutils/
 endef
