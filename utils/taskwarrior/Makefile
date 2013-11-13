@@ -26,10 +26,12 @@ define Package/taskwarrior
   TITLE:=taskwarrior
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+libncurses +libstdcpp
+  DEPENDS:=+libncurses +libstdcpp +liblua +libuuid
   URL:=http://taskwarrior.org/projects/show/taskwarrior
   MAINTAINER:=Xiangfu Liu <xiangfu@sharism.cc>
 endef
+
+TARGET_LDFLAGS += -ldl
 
 define Package/taskwarrior/description
  taskwarrior is a command-line todo list manager
