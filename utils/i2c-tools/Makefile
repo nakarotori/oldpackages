@@ -62,7 +62,7 @@ define Package/python-smbus/description
  This package contain the python bindings for Linux SMBus access through i2c-dev.
 endef
 
-+TARGET_CPPFLAGS += -I$(LINUX_DIR)/$(LINUX_UAPI_DIR)include -I$(KERNEL_BUILD_DIR)/$(PKG_SOURCE_SUBDIR)/include
+TARGET_CPPFLAGS += -I$(LINUX_DIR)/$(LINUX_UAPI_DIR)include -I$(KERNEL_BUILD_DIR)/$(PKG_SOURCE_SUBDIR)/include
 
 ifdef CONFIG_PACKAGE_python-smbus
   define Build/Compile/python-smbus
