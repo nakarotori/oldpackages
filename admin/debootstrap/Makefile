@@ -13,7 +13,7 @@ PKG_VERSION:=1.0.48
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-udeb_$(PKG_VERSION)_all.udeb
-PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/d/debootstrap
+PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/d/debootstrap \
 		http://ftp.acc.umu.se/mirror/cdimage/snapshot/Debian/pool/main/d/debootstrap
 PKG_MD5SUM:=fae3ba2258e41e17bcb77bbe84d26b2e
 
