@@ -34,9 +34,11 @@ define Package/dhcpcd/description
 endef
 
 define Package/dhcpcd/install
-	$(INSTALL_DIR) $(1)/sbin $(1)/etc
+	$(INSTALL_DIR) $(1)/sbin $(1)/etc $(1)/etc/dhcpcd.enter-hook
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/dhcpcd $(1)/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/lib/dhcpcd-run-hooks $(1)/sbin/
 	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/etc/dhcpcd.conf $(1)/etc/dhcpcd.conf
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/usr/lib/dhcpcd-hooks/* $(1)/etc/dhcpcd.enter-hook/
 endef
 
 $(eval $(call BuildPackage,dhcpcd))
