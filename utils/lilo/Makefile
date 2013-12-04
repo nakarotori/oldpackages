@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lilo
-PKG_VERSION:=22.8
-PKG_RELEASE:=2
+PKG_VERSION:=24.0
+PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).src.tar.gz
-PKG_SOURCE_URL:=ftp://metalab.unc.edu/pub/Linux/system/boot/lilo/
-PKG_MD5SUM:=72765f2aafd20e23ecf07ebd22baeec7
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://alioth.debian.org/frs/download.php/file/3922
+PKG_MD5SUM:=03d7090835a5675314082847f1ac7910
 
 include $(INCLUDE_DIR)/package.mk
 
