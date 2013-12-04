@@ -19,6 +19,7 @@ PKG_MD5SUM:=2731d79bec0acef3d30d2fc86b0b72fd
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL=1
+PKG_BUILD_DEPENDS:=alsa-lib
 
 include $(INCLUDE_DIR)/package.mk
 
