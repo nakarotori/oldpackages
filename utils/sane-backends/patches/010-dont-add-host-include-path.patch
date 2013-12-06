@@ -1,6 +1,6 @@
 --- a/configure
 +++ b/configure
-@@ -5070,9 +5070,6 @@ else
+@@ -5192,9 +5192,6 @@
  fi
  
  
