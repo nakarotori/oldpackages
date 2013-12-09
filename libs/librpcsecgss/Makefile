@@ -26,6 +26,7 @@ define Package/librpcsecgss
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=required libraries for the nfs-utils
+  DEPENDS:= +USE_UCLIBC:librpc
   URL:=http://www.citi.umich.edu/projects/nfsv4/linux
 endef
 
