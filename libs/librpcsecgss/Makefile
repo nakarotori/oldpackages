@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=librpcsecgss
-PKG_VERSION:=0.14
-PKG_RELEASE:=2
+PKG_VERSION:=0.18
+PKG_RELEASE:=1
 
 PKG_SOURCE:=librpcsecgss-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.citi.umich.edu/projects/nfsv4/linux/librpcsecgss/
-PKG_MD5SUM:=0d4cdee46a98731b1b71e30504589281
+PKG_MD5SUM:=b45ed565bdc3099023aa35830ec92997
 
 PKG_BUILD_DEPENDS:=libgssapi
 PKG_BUILD_PARALLEL:=1
