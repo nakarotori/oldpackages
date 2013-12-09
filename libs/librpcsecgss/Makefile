@@ -13,7 +13,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=librpcsecgss-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.citi.umich.edu/projects/nfsv4/linux/librpcsecgss/
-PKG_MD5SUM:=b45ed565bdc3099023aa35830ec92997
+PKG_MD5SUM:=f2c4a69c5a32f62b762a569b8d962156
 
 PKG_BUILD_DEPENDS:=libgssapi
 PKG_BUILD_PARALLEL:=1
