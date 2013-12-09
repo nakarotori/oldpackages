@@ -7,13 +7,13 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=libgssapi
-PKG_VERSION:=0.11
-PKG_RELEASE:=3
+PKG_NAME:=libgssglue
+PKG_VERSION:=0.4
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.citi.umich.edu/projects/nfsv4/linux/libgssapi/
-PKG_MD5SUM:=0e5b4c7267724f8ddf64bc35514c272e
+PKG_SOURCE_URL:=http://www.citi.umich.edu/projects/nfsv4/linux/libgssglue
+PKG_MD5SUM:=088797f3180702fa54e786496b32e750
 
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
@@ -21,14 +21,14 @@ PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/libgssapi
+define Package/libgssglue
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=required libraries for the nfs-utils
   URL:=http://www.citi.umich.edu/projects/nfsv4/linux
 endef
 
-define Package/libgssapi/description
+define Package/libgssglue/description
  Support libraries - for newer nfs mount command (nfs4)
 endef
 
@@ -48,4 +48,4 @@ define Build/InstallDev
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libgssapi.pc $(1)/usr/lib/pkgconfig
 endef
 
-$(eval $(call BuildPackage,libgssapi))
+$(eval $(call BuildPackage,libgssglue))
