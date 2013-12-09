@@ -43,9 +43,9 @@ define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/gssglue/gssapi
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/gssglue/gssapi/gssapi.h $(1)/usr/include/gssglue/gssapi
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgssapi.{a,so*} $(1)/usr/lib
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgssglue.{a,so*} $(1)/usr/lib
 	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libgssapi.pc $(1)/usr/lib/pkgconfig
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libgssglue.pc $(1)/usr/lib/pkgconfig
 endef
 
 $(eval $(call BuildPackage,libgssglue))
