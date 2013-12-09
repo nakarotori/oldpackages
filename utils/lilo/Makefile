@@ -37,13 +37,13 @@ endef
 
 define Package/lilo/install
 	$(INSTALL_DIR) $(1)/sbin
-	$(CP) $(PKG_BUILD_DIR)/lilo.static $(1)/sbin/lilo
+	$(CP) $(PKG_BUILD_DIR)/src/lilo.static $(1)/sbin/lilo
 	$(INSTALL_DIR) $(1)/etc
 	$(CP) ./files/lilo.conf $(1)/etc/
 	$(CP) ./files/boot.msg $(1)/etc/
 endef
 
-$(foreach command, as86 ld86, \
+$(foreach command, as86 ld86 bcc, \
   $(eval $(call RequireCommand,$(command), \
    $(PKG_NAME) requires $(command). \
   )) \
