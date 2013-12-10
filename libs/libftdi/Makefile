@@ -40,6 +40,7 @@ define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi1.{a,so} $(1)/usr/lib/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi1.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/libftdi1-config $(2)/bin/
 endef
 
 define Package/libftdi1/install
