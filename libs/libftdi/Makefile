@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=libftdi
+PKG_NAME:=libftdi1
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
 
@@ -18,16 +18,17 @@ PKG_MD5SUM:=e02dd77ee10b82b5edfbb8c199185bbf
 PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/cmake.mk
 
-define Package/libftdi
+define Package/libftdi1
   SECTION:=libs
   CATEGORY:=Libraries
-  DEPENDS:=+libusb-compat
+  DEPENDS:=+libusb-1.0
   TITLE:=library to talk to FTDI chips
   URL:=http://www.intra2net.com/en/developer/libftdi/
 endef
 
-define Package/libftdi/description
+define Package/libftdi1/description
   libFTDI - FTDI USB driver with bitbang mode
   libFTDI is an open source library to talk to FTDI chips: FT232BM, FT245BM, FT2232C, FT2232H, FT4232H, FT2232D and FT245R, including the popular bitbang mode. 
   The library is linked with your program in userspace, no kernel driver required.
@@ -35,15 +36,15 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/ftdi.h $(1)/usr/include/
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/libftdi1/ftdi.h $(1)/usr/include/
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi.{a,so} $(1)/usr/lib/
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi1.{a,so} $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi1.so* $(1)/usr/lib/
 endef
 
-define Package/libftdi/install
+define Package/libftdi1/install
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi.so.* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libftdi1.so.* $(1)/usr/lib/
 endef
 
-$(eval $(call BuildPackage,libftdi))
+$(eval $(call BuildPackage,libftdi1))
