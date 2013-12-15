@@ -138,7 +138,7 @@ endef
 define Package/ruby-openssl
 $(call Package/ruby/Default)
   TITLE:=Ruby support for openssl
-  DEPENDS:=ruby +libopenssl +@OPENSSL_WITH_EC2M
+  DEPENDS:=ruby +libopenssl
 endef
 
 define Package/ruby-rdoc
