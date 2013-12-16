@@ -28,7 +28,7 @@ endef
 define KernelPackage/zaptel14/Default
   TITLE:=Zaptel (kernel module)
   SUBMENU:=Voice over IP
-  DEPENDS:=
+  DEPENDS:=+kmod-lib-crc-ccitt
 endef
 
 define KernelPackage/zaptel14
