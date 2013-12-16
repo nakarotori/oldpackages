@@ -22,13 +22,13 @@ include $(INCLUDE_DIR)/package.mk
 define Package/zaptel14/Default
   TITLE:=Zaptel
   URL:=http://ftp.digium.com/pub/zaptel/releases
-  DEPENDS:=
+  DEPENDS:=@BROKEN
 endef
 
 define KernelPackage/zaptel14/Default
   TITLE:=Zaptel (kernel module)
   SUBMENU:=Voice over IP
-  DEPENDS:=+kmod-lib-crc-ccitt
+  DEPENDS:=+kmod-lib-crc-ccitt @BROKEN
 endef
 
 define KernelPackage/zaptel14
