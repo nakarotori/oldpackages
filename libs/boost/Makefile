@@ -193,7 +193,6 @@ define Build/Compile
 		) \
 		bjam \
 			'-sBUILD=release <optimization>space <inlining>on <debug-symbols>off' \
-			$(filter -j%,$(PKG_JOBS)) \
 			--toolset=gcc-$(ARCH) --build-type=minimal --layout=system \
 			--disable-long-double \
 			$(CONFIGURE_ARGS) \
