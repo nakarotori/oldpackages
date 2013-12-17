@@ -353,6 +353,7 @@ define Package/boost-wave/install
   $(call Package/boost/Default/install,$(1),wave)
 endef
 
+$(eval $(call RequireCommand, bjam, $(PKG_NAME) requires boost-jam. ))
 $(eval $(call HostBuild))
 $(eval $(call BuildPackage,boost))
 $(eval $(call BuildPackage,boost-chrono))
