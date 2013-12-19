@@ -16,7 +16,7 @@ PKG_SOURCE_URL:=http://www.flyn.org/projects/dmapd
 PKG_MD5SUM:=3007413cffb1d49f35a4609cfdd39046
 
 PKG_FIXUP:=autoreconf
-PKG_INSTALL:=2
+PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
@@ -38,7 +38,8 @@ define Package/dmapd/conffiles
 /etc/dmapd.conf
 endef
 
-TARGET_LDFLAGS+=\
+TARGET_CFLAGS+= -I$(STAGING_DIR)/usr/include/gstreamer-0.10/
+TARGET_LDFLAGS+= -L$(STAGING_DIR)/usr/include/gstreamer-0.10/ \
 	-Wl,-rpath-link=$(STAGING_DIR)/usr/lib \
 
 define Package/dmapd/install
