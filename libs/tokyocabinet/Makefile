@@ -18,7 +18,7 @@ PKG_MD5SUM:=3d94fe2aebf5d9ff0478ed895bc46fc9
 include $(INCLUDE_DIR)/package.mk
 
 define Package/tokyocabinet
-  SUBMENU:=database
+  SUBMENU:=Database
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=A library of routines to manage databases

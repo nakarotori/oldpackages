@@ -28,7 +28,7 @@ include $(INCLUDE_DIR)/package.mk
 TARGET_CFLAGS += $(FPIC)
 
 define Package/sqlite2/Default
-  SUBMENU:=database
+  SUBMENU:=Database
   TITLE:=SQLite (v2.x) database engine
   URL:=http://www.sqlite.org/
 endef
@@ -52,7 +52,7 @@ define Package/sqlite2-cli
   CATEGORY:=Utilities
   DEPENDS:=+libsqlite2 +libncurses +libreadline
   TITLE+= (cli)
-  SUBMENU:=database
+  SUBMENU:=Database
 endef
 
 define Package/sqlite2-cli/description
