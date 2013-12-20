@@ -27,7 +27,6 @@ endef
 
 define Build/Configure
 	$(call Build/Configure/Default, \
-		--enable-ssl \
 		--disable-glibtest \
 		--without-apache-httpd \
 		--without-gnome \
