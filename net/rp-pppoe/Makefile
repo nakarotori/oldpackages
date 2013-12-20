@@ -25,7 +25,7 @@ define Package/rp-pppoe/Default
   DEPENDS:=+ppp
   TITLE:=PPPoE (PPP over Ethernet)
   URL:=http://roaringpenguin.com/products/pppoe
-  SUBMENU:=dial-in/up
+  SUBMENU:=Dial-in/up
 endef
 
 define Package/rp-pppoe/Default/description
