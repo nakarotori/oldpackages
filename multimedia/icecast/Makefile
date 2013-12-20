@@ -28,6 +28,7 @@ define Package/icecast
   DEPENDS:=+libcurl +libxml2 +libxslt +libogg +libopenssl
   TITLE:=A streaming media server for Ogg/Vorbis and MP3 audio streams
   URL:=http://www.icecast.org/
+  SUBMENU:=Streaming
 endef
 
 define Package/icecast/description
