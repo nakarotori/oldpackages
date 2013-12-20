@@ -25,7 +25,7 @@ define Package/zip
   DEPENDS:=
   TITLE:=Archiver for .zip files
   URL:=http://infozip.sourceforge.net/Zip.html
-  SUBMENU:=compression
+  SUBMENU:=Compression
 endef
 
 define Package/zip/description

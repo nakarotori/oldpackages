@@ -25,7 +25,7 @@ define Package/unzip
   DEPENDS:=
   TITLE:=De-archiver for .zip files
   URL:=http://infozip.sourceforge.net/UnZip.html
-  SUBMENU:=compression
+  SUBMENU:=Compression
 endef
 
 define Package/unzip/description

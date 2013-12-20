@@ -24,7 +24,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/unrar
   SECTION:=utils
   CATEGORY:=Utilities
-  SUBMENU:=compression
+  SUBMENU:=Compression
   TITLE:=unrar application
   URL:=http://www.rarlab.com/
   DEPENDS:=$(CXX_DEPENDS)
