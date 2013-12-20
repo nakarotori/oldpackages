@@ -26,7 +26,7 @@ define Package/kismet/Default
   TITLE:=Kismet
   DEPENDS:= $(CXX_DEPENDS) +libnl
   URL:=http://www.kismetwireless.net/
-  SUBMENU:=wireless
+  SUBMENU:=Wireless
 endef
 
 define Package/kismet/Default/description

@@ -25,7 +25,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/airpwn
 	SECTION:=net
 	CATEGORY:=Network
-        SUBMENU:=wireless
+        SUBMENU:=Wireless
 	TITLE:=Packet injection pwnage
 	DEPENDS:=+libnet1 +libopenssl +libpcap +libpcre +libpthread
 	URL:=http://airpwn.sourceforge.net/Airpwn.html
