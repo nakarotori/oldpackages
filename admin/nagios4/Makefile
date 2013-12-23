@@ -28,6 +28,8 @@ define Package/nagios4/description
         service and network monitoring program
 endef
 
+EXTRA_CFLAGS += $(TARGET_CPPFLAGS)
+
 CONFIGURE_VARS += \
         ac_cv_lib_gd_gdImagePng_1=no \
         ac_cv_lib_gd_gdImagePng_2=no \
@@ -38,6 +40,9 @@ CONFIGURE_ARGS += \
 	--with-nagios-user="root" \
 	--with-nagios-group="root" \
 	--sysconfdir="/etc/nagios" \
+	--without-gd-lib \
+	--without-gd-inc \
+	CFLAGS="$(TARGET_CFLAGS) $(EXTRA_CFLAGS)"
 
 define Package/nagios4/install
 	$(INSTALL_DIR)  $(1)/etc/nagios
