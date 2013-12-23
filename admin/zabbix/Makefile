@@ -27,7 +27,7 @@ define Package/zabbix/Default
   CATEGORY:=Administration
   TITLE:=Zabbix
   URL:=http://www.zabbix.com/
-  SUBMENU:=zabbix
+  SUBMENU:=Zabbix
   MAINTAINER:=Mirko Vogt <mirko@openwrt.org>
 endef
 
