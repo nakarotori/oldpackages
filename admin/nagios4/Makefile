@@ -29,19 +29,19 @@ define Package/nagios4/description
 endef
 
 CONFIGURE_ARGS += \
-        --with-nagios-user="root" \
-        --with-nagios-group="root" \
-        --sysconfdir="/etc/nagios" \
+	--with-nagios-user="root" \
+	--with-nagios-group="root" \
+	--sysconfdir="/etc/nagios" \
 
 define Package/nagios4/install
-        $(INSTALL_DIR)  $(1)/etc/nagios
-        $(INSTALL_DATA) $(PKG_INSTALL_DIR)/etc/nagios/* $(1)/etc/nagios/
-        $(INSTALL_DIR)  $(1)/usr/bin
-        $(INSTALL_BIN)  $(PKG_INSTALL_DIR)/usr/bin/{nagios,nagiostats} $(1)/usr/bin/
-        $(INSTALL_DIR)  $(1)/usr/sbin
-        $(INSTALL_BIN)  $(PKG_INSTALL_DIR)/usr/sbin/* $(1)/usr/sbin/
-        $(INSTALL_DIR)  $(1)/usr/share
-        $(CP)   $(PKG_INSTALL_DIR)/usr/share/* $(1)/usr/share/
+	$(INSTALL_DIR)  $(1)/etc/nagios
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/etc/nagios/* $(1)/etc/nagios/
+	$(INSTALL_DIR)  $(1)/usr/bin
+	$(INSTALL_BIN)  $(PKG_INSTALL_DIR)/usr/bin/{nagios,nagiostats} $(1)/usr/bin/
+	$(INSTALL_DIR)  $(1)/usr/sbin
+	$(INSTALL_BIN)  $(PKG_INSTALL_DIR)/usr/sbin/* $(1)/usr/sbin/
+	$(INSTALL_DIR)  $(1)/usr/share
+	$(CP)   $(PKG_INSTALL_DIR)/usr/share/* $(1)/usr/share/
 endef
 
 define Package/nagios4/conffiles
@@ -53,4 +53,3 @@ define Package/nagios4/conffiles
 endef
 
 $(eval $(call BuildPackage,nagios4))
-
