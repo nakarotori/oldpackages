@@ -25,7 +25,7 @@ define Package/deco
   DEPENDS:=+libncurses
   TITLE:=Text-based, full featured file manager
   URL:=http://deco.sourceforge.net/
-  SUBMENU:=filemanager
+  SUBMENU:=Filemanager
 endef
 
 define Package/deco/description
