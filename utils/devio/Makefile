@@ -18,7 +18,7 @@ PKG_MD5SUM:=5d332c2bffc0791367bcf3368ba1a0d1
 include $(INCLUDE_DIR)/package.mk
 
 define Package/devio
-  SUBMENU:=disc
+  SUBMENU:=Disc
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=correctly read (or write) a region of a block device
