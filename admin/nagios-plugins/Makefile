@@ -12,7 +12,7 @@ PKG_VERSION:=1.4.14
 PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=@SF/nagiosplug
+PKG_SOURCE_URL:=https://www.nagios-plugins.org/download
 PKG_MD5SUM:=a1835a48a777863ed2583de3c82446a9
 
 PKG_FIXUP:=patch-libtool
