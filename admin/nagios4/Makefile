@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nagios4
+PKG_NAME:=nagios
 PKG_VERSION:=4.0.2
 PKG_RELEASE:=1
 
@@ -27,6 +27,12 @@ endef
 define Package/nagios4/description
         service and network monitoring program
 endef
+
+CONFIGURE_VARS += \
+        ac_cv_lib_gd_gdImagePng_1=no \
+        ac_cv_lib_gd_gdImagePng_2=no \
+        ac_cv_lib_gd_gdImagePng_3=no \
+        ac_cv_lib_gd_gdImagePng_4=no
 
 CONFIGURE_ARGS += \
 	--with-nagios-user="root" \
