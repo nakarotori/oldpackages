@@ -44,6 +44,14 @@ CONFIGURE_ARGS += \
 	--without-gd-inc \
 	CFLAGS="$(TARGET_CFLAGS) $(EXTRA_CFLAGS)"
 
+define Build/Compile
+	$(MAKE) -C $(PKG_BUILD_DIR) \
+		DESTDIR="$(PKG_INSTALL_DIR)" \
+		INSTALL_OPTS="" \
+		STRIP=: \
+		all install install-config
+endef
+
 define Package/nagios4/install
 	$(INSTALL_DIR)  $(1)/etc/nagios
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/etc/nagios/* $(1)/etc/nagios/
