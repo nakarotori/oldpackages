@@ -1,5 +1,5 @@
---- elfutils/backends/ChangeLog
-+++ elfutils/backends/ChangeLog
+--- a/backends/ChangeLog
++++ b/backends/ChangeLog
 @@ -135,6 +135,10 @@
  	* ppc_attrs.c (ppc_check_object_attribute): Handle tag
  	GNU_Power_ABI_Struct_Return.
@@ -33,8 +33,8 @@
  	* ppc_reloc.def: Update bits per Alan Modra <amodra@bigpond.net.au>.
  	* ppc64_reloc.def: Likewise.
  
---- elfutils/backends/Makefile.am
-+++ elfutils/backends/Makefile.am
+--- a/backends/Makefile.am
++++ b/backends/Makefile.am
 @@ -111,7 +111,7 @@ libebl_%.so libebl_%.map: libebl_%_pic.a
  	$(LINK) -shared -o $(@:.map=.so) \
  		-Wl,--whole-archive $< $(cpu_$*) -Wl,--no-whole-archive \
@@ -44,8 +44,8 @@
  	$(textrel_check)
  
  libebl_i386.so: $(cpu_i386)
---- elfutils/backends/Makefile.in
-+++ elfutils/backends/Makefile.in
+--- a/backends/Makefile.in
++++ b/backends/Makefile.in
 @@ -38,7 +38,8 @@ build_triplet = @build@
  host_triplet = @host@
  DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
@@ -94,8 +94,8 @@
  	$(textrel_check)
  
  libebl_i386.so: $(cpu_i386)
---- elfutils/ChangeLog
-+++ elfutils/ChangeLog
+--- a/ChangeLog
++++ b/ChangeLog
 @@ -16,6 +16,8 @@
  
  2012-01-24  Mark Wielaard  <mjw@redhat.com>
@@ -175,8 +175,8 @@
  2005-05-19  Roland McGrath  <roland@redhat.com>
  
  	* configure.ac [AH_BOTTOM] (INTDECL, _INTDECL): New macros.
---- elfutils/config/ChangeLog
-+++ elfutils/config/ChangeLog
+--- a/config/ChangeLog
++++ b/config/ChangeLog
 @@ -19,6 +19,10 @@
  
  	* known-dwarf.awk: Use gawk.
@@ -188,8 +188,8 @@
  2010-07-02  Ulrich Drepper  <drepper@redhat.com>
  
  	* elfutils.spec.in: Add more BuildRequires.
---- elfutils/config/eu.am
-+++ elfutils/config/eu.am
+--- a/config/eu.am
++++ b/config/eu.am
 @@ -1,6 +1,6 @@
  ## Common automake fragments for elfutils subdirectory makefiles.
  ##
@@ -221,8 +221,8 @@
  if MUDFLAP
  AM_CFLAGS += -fmudflap
  libmudflap = -lmudflap
---- elfutils/config/Makefile.in
-+++ elfutils/config/Makefile.in
+--- a/config/Makefile.in
++++ b/config/Makefile.in
 @@ -76,6 +76,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
@@ -239,8 +239,8 @@
  XGETTEXT = @XGETTEXT@
  XGETTEXT_015 = @XGETTEXT_015@
  XGETTEXT_EXTRA_OPTIONS = @XGETTEXT_EXTRA_OPTIONS@
---- elfutils/config.h.in
-+++ elfutils/config.h.in
+--- a/config.h.in
++++ b/config.h.in
 @@ -6,6 +6,9 @@
  /* Defined if libdw should support GNU ref_alt FORM, dwz multi files. */
  #undef ENABLE_DWZ
@@ -259,8 +259,8 @@
 +#undef __thread
 +
  #include <eu-config.h>
---- elfutils/configure
-+++ elfutils/configure
+--- a/configure
++++ b/configure
 @@ -598,6 +598,8 @@ ZLIB_TRUE
  LIBEBL_SUBDIR
  TESTS_RPATH_FALSE
@@ -484,8 +484,8 @@
  if test -z "${TESTS_RPATH_TRUE}" && test -z "${TESTS_RPATH_FALSE}"; then
    as_fn_error $? "conditional \"TESTS_RPATH\" was never defined.
  Usually this means the macro was only invoked conditionally." "$LINENO" 5
---- elfutils/configure.ac
-+++ elfutils/configure.ac
+--- a/configure.ac
++++ b/configure.ac
 @@ -90,6 +90,54 @@ CFLAGS="$old_CFLAGS"])
  AS_IF([test "x$ac_cv_c99" != xyes],
        AC_MSG_ERROR([gcc with C99 support required]))
@@ -573,8 +573,8 @@
 +eu_version=`expr \( $eu_version + 999 \) / 1000`
  
  AC_OUTPUT
---- elfutils/lib/ChangeLog
-+++ elfutils/lib/ChangeLog
+--- a/lib/ChangeLog
++++ b/lib/ChangeLog
 @@ -35,6 +35,9 @@
  
  2009-01-23  Roland McGrath  <roland@redhat.com>
@@ -597,8 +597,8 @@
  2005-04-30  Ulrich Drepper  <drepper@redhat.com>
  
  	* Makefile.am: Use -ffunction-sections for xmalloc.c.
---- elfutils/lib/eu-config.h
-+++ elfutils/lib/eu-config.h
+--- a/lib/eu-config.h
++++ b/lib/eu-config.h
 @@ -162,6 +162,17 @@ asm (".section predict_data, \"aw\"; .pr
  /* This macro is used by the tests conditionalize for standalone building.  */
  #define ELFUTILS_HEADER(name) <lib##name.h>
@@ -617,8 +617,8 @@
  
  #ifdef SHARED
  # define OLD_VERSION(name, version) \
---- elfutils/lib/Makefile.in
-+++ elfutils/lib/Makefile.in
+--- a/lib/Makefile.in
++++ b/lib/Makefile.in
 @@ -37,7 +37,8 @@ build_triplet = @build@
  host_triplet = @host@
  DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
@@ -658,8 +658,8 @@
  @MUDFLAP_FALSE@libmudflap = 
  @MUDFLAP_TRUE@libmudflap = -lmudflap
  COMPILE.os = $(filter-out -fprofile-arcs -ftest-coverage $(no_mudflap.os),\
---- elfutils/libasm/ChangeLog
-+++ elfutils/libasm/ChangeLog
+--- a/libasm/ChangeLog
++++ b/libasm/ChangeLog
 @@ -71,6 +71,11 @@
  	* asm_error.c: Add new error ASM_E_IOERROR.
  	* libasmP.h: Add ASM_E_IOERROR definition.
@@ -672,8 +672,8 @@
  2005-02-15  Ulrich Drepper  <drepper@redhat.com>
  
  	* Makefile.am (AM_CFLAGS): Add -Wunused -Wextra -Wformat=2.
---- elfutils/libasm/Makefile.in
-+++ elfutils/libasm/Makefile.in
+--- a/libasm/Makefile.in
++++ b/libasm/Makefile.in
 @@ -39,10 +39,11 @@ host_triplet = @host@
  DIST_COMMON = $(noinst_HEADERS) $(pkginclude_HEADERS) \
  	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
@@ -726,8 +726,8 @@
  @MUDFLAP_FALSE@libasm_so_SOURCES = 
  noinst_HEADERS = libasmP.h symbolhash.h
  EXTRA_DIST = libasm.map
---- elfutils/libcpu/ChangeLog
-+++ elfutils/libcpu/ChangeLog
+--- a/libcpu/ChangeLog
++++ b/libcpu/ChangeLog
 @@ -38,6 +38,9 @@
  
  2009-01-23  Roland McGrath  <roland@redhat.com>
@@ -750,8 +750,8 @@
  2005-02-15  Ulrich Drepper  <drepper@redhat.com>
  
  	* Makefile (AM_CFLAGS): Add -Wunused -Wextra -Wformat=2.
---- elfutils/libcpu/i386_disasm.c
-+++ elfutils/libcpu/i386_disasm.c
+--- a/libcpu/i386_disasm.c
++++ b/libcpu/i386_disasm.c
 @@ -822,6 +822,7 @@ i386_disasm (const uint8_t **startp, con
  
  			default:
@@ -760,8 +760,8 @@
  			}
  		    }
  		  else
---- elfutils/libcpu/Makefile.in
-+++ elfutils/libcpu/Makefile.in
+--- a/libcpu/Makefile.in
++++ b/libcpu/Makefile.in
 @@ -39,7 +39,8 @@ host_triplet = @host@
  DIST_COMMON = $(am__noinst_HEADERS_DIST) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(top_srcdir)/config/eu.am ChangeLog \
@@ -801,8 +801,8 @@
  @MUDFLAP_FALSE@libmudflap = 
  @MUDFLAP_TRUE@libmudflap = -lmudflap
  COMPILE.os = $(filter-out -fprofile-arcs -ftest-coverage $(no_mudflap.os),\
---- elfutils/libdw/ChangeLog
-+++ elfutils/libdw/ChangeLog
+--- a/libdw/ChangeLog
++++ b/libdw/ChangeLog
 @@ -82,6 +82,10 @@
  
  	* Makefile.am (known-dwarf.h): Run gawk on config/known-dwarf.awk.
@@ -837,8 +837,8 @@
  	* dwarf_formref_die.c (dwarf_formref_die): Add CU header offset to
  	formref offset.
  
---- elfutils/libdw/dwarf_begin_elf.c
-+++ elfutils/libdw/dwarf_begin_elf.c
+--- a/libdw/dwarf_begin_elf.c
++++ b/libdw/dwarf_begin_elf.c
 @@ -48,6 +48,14 @@
  #if USE_ZLIB
  # include <endian.h>
@@ -854,8 +854,8 @@
  # include <zlib.h>
  # undef crc32
  #endif
---- elfutils/libdw/libdw.h
-+++ elfutils/libdw/libdw.h
+--- a/libdw/libdw.h
++++ b/libdw/libdw.h
 @@ -831,7 +831,7 @@ extern Dwarf_OOM dwarf_new_oom_handler (
  
  
@@ -865,8 +865,8 @@
  /* Return attribute code of given attribute.  */
  __libdw_extern_inline unsigned int
  dwarf_whatattr (Dwarf_Attribute *attr)
---- elfutils/libdw/Makefile.in
-+++ elfutils/libdw/Makefile.in
+--- a/libdw/Makefile.in
++++ b/libdw/Makefile.in
 @@ -39,8 +39,9 @@ host_triplet = @host@
  DIST_COMMON = $(include_HEADERS) $(noinst_HEADERS) \
  	$(pkginclude_HEADERS) $(srcdir)/Makefile.am \
@@ -908,8 +908,8 @@
  @MUDFLAP_FALSE@libmudflap = 
  @MUDFLAP_TRUE@libmudflap = -lmudflap
  COMPILE.os = $(filter-out -fprofile-arcs -ftest-coverage $(no_mudflap.os),\
---- elfutils/libdwfl/ChangeLog
-+++ elfutils/libdwfl/ChangeLog
+--- a/libdwfl/ChangeLog
++++ b/libdwfl/ChangeLog
 @@ -1420,6 +1420,11 @@
  
  2005-07-21  Roland McGrath  <roland@redhat.com>
@@ -922,8 +922,8 @@
  	* Makefile.am (noinst_HEADERS): Add loc2c.c.
  
  	* test2.c (main): Check sscanf result to quiet warning.
---- elfutils/libdwfl/Makefile.in
-+++ elfutils/libdwfl/Makefile.in
+--- a/libdwfl/Makefile.in
++++ b/libdwfl/Makefile.in
 @@ -38,11 +38,12 @@ host_triplet = @host@
  DIST_COMMON = $(noinst_HEADERS) $(pkginclude_HEADERS) \
  	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
@@ -991,8 +991,8 @@
  @MUDFLAP_FALSE@libdwfl = $(libdw)
  @MUDFLAP_TRUE@libdwfl = libdwfl.a $(libdw) $(libebl) $(libelf) $(libeu)
  @MUDFLAP_FALSE@libdw = ../libdw/libdw.so
---- elfutils/libebl/ChangeLog
-+++ elfutils/libebl/ChangeLog
+--- a/libebl/ChangeLog
++++ b/libebl/ChangeLog
 @@ -658,6 +658,11 @@
  	* Makefile.am (libebl_*_so_SOURCES): Set to $(*_SRCS) so dependency
  	tracking works right.
@@ -1005,8 +1005,8 @@
  2005-05-21  Ulrich Drepper  <drepper@redhat.com>
  
  	* libebl_x86_64.map: Add x86_64_core_note.
---- elfutils/libebl/Makefile.in
-+++ elfutils/libebl/Makefile.in
+--- a/libebl/Makefile.in
++++ b/libebl/Makefile.in
 @@ -38,7 +38,8 @@ host_triplet = @host@
  DIST_COMMON = $(noinst_HEADERS) $(pkginclude_HEADERS) \
  	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
@@ -1046,8 +1046,8 @@
  @MUDFLAP_FALSE@libmudflap = 
  @MUDFLAP_TRUE@libmudflap = -lmudflap
  COMPILE.os = $(filter-out -fprofile-arcs -ftest-coverage $(no_mudflap.os),\
---- elfutils/libelf/ChangeLog
-+++ elfutils/libelf/ChangeLog
+--- a/libelf/ChangeLog
++++ b/libelf/ChangeLog
 @@ -34,6 +34,11 @@
  
  	* elf-knowledge.h (SECTION_STRIP_P): Remove < SHT_NUM check.
@@ -1072,8 +1072,8 @@
  2005-05-08  Roland McGrath  <roland@redhat.com>
  
  	* elf_begin.c (read_file) [_MUDFLAP]: Don't use mmap for now.
---- elfutils/libelf/common.h
-+++ elfutils/libelf/common.h
+--- a/libelf/common.h
++++ b/libelf/common.h
 @@ -139,7 +139,7 @@ libelf_release_all (Elf *elf)
    (Var) = (sizeof (Var) == 1						      \
  	   ? (unsigned char) (Var)					      \
@@ -1092,8 +1092,8 @@
  	      : (sizeof (Var) == 4					      \
  		 ? bswap_32 (Var)					      \
  		 : bswap_64 (Var))))
---- elfutils/libelf/gnuhash_xlate.h
-+++ elfutils/libelf/gnuhash_xlate.h
+--- a/libelf/gnuhash_xlate.h
++++ b/libelf/gnuhash_xlate.h
 @@ -1,5 +1,5 @@
  /* Conversion functions for versioning information.
 -   Copyright (C) 2006, 2007 Red Hat, Inc.
@@ -1112,8 +1112,8 @@
        len -= 4;
      }
  }
---- elfutils/libelf/Makefile.in
-+++ elfutils/libelf/Makefile.in
+--- a/libelf/Makefile.in
++++ b/libelf/Makefile.in
 @@ -39,11 +39,12 @@ host_triplet = @host@
  DIST_COMMON = $(include_HEADERS) $(noinst_HEADERS) \
  	$(pkginclude_HEADERS) $(srcdir)/Makefile.am \
@@ -1168,8 +1168,8 @@
  @MUDFLAP_FALSE@libelf_so_SOURCES = 
  noinst_HEADERS = elf.h abstract.h common.h exttypes.h gelf_xlate.h libelfP.h \
  		 version_xlate.h gnuhash_xlate.h note_xlate.h dl-hash.h
---- elfutils/m4/Makefile.in
-+++ elfutils/m4/Makefile.in
+--- a/m4/Makefile.in
++++ b/m4/Makefile.in
 @@ -75,6 +75,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
@@ -1186,8 +1186,8 @@
  XGETTEXT = @XGETTEXT@
  XGETTEXT_015 = @XGETTEXT_015@
  XGETTEXT_EXTRA_OPTIONS = @XGETTEXT_EXTRA_OPTIONS@
---- elfutils/Makefile.in
-+++ elfutils/Makefile.in
+--- a/Makefile.in
++++ b/Makefile.in
 @@ -165,6 +165,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
@@ -1204,8 +1204,8 @@
  XGETTEXT = @XGETTEXT@
  XGETTEXT_015 = @XGETTEXT_015@
  XGETTEXT_EXTRA_OPTIONS = @XGETTEXT_EXTRA_OPTIONS@
---- elfutils/src/addr2line.c
-+++ elfutils/src/addr2line.c
+--- a/src/addr2line.c
++++ b/src/addr2line.c
 @@ -447,10 +447,10 @@ handle_address (const char *string, Dwfl
        bool parsed = false;
        int i, j;
@@ -1219,8 +1219,8 @@
  	{
  	default:
  	  break;
---- elfutils/src/ChangeLog
-+++ elfutils/src/ChangeLog
+--- a/src/ChangeLog
++++ b/src/ChangeLog
 @@ -606,8 +606,16 @@
  	* readelf.c (attr_callback): Use print_block only when we don't use
  	print_ops.
@@ -1302,8 +1302,8 @@
  2005-05-30  Roland McGrath  <roland@redhat.com>
  
  	* readelf.c (print_debug_line_section): Print section offset of each
---- elfutils/src/findtextrel.c
-+++ elfutils/src/findtextrel.c
+--- a/src/findtextrel.c
++++ b/src/findtextrel.c
 @@ -496,7 +496,11 @@ ptrcompare (const void *p1, const void *
  
  
@@ -1317,8 +1317,8 @@
  	   GElf_Addr addr, Elf *elf, Elf_Scn *symscn, Dwarf *dw,
  	   const char *fname, bool more_than_one, void **knownsrcs)
  {
---- elfutils/src/ld.h
-+++ elfutils/src/ld.h
+--- a/src/ld.h
++++ b/src/ld.h
 @@ -1114,6 +1114,7 @@ extern bool dynamically_linked_p (void);
  
  /* Checked whether the symbol is undefined and referenced from a DSO.  */
@@ -1334,8 +1334,8 @@
 +#endif	/* Optimizing and not GCC 4.2.  */
  
  #endif	/* ld.h */
---- elfutils/src/Makefile.am
-+++ elfutils/src/Makefile.am
+--- a/src/Makefile.am
++++ b/src/Makefile.am
 @@ -95,6 +95,9 @@ addr2line_no_Wformat = yes
  # XXX While the file is not finished, don't warn about this
  ldgeneric_no_Wunused = yes
@@ -1346,8 +1346,8 @@
  readelf_LDADD = $(libdw) $(libebl) $(libelf) $(libeu) $(libmudflap) -ldl
  nm_LDADD = $(libdw) $(libebl) $(libelf) $(libeu) $(libmudflap) -ldl \
  	   $(demanglelib)
---- elfutils/src/Makefile.in
-+++ elfutils/src/Makefile.in
+--- a/src/Makefile.in
++++ b/src/Makefile.in
 @@ -40,7 +40,8 @@ host_triplet = @host@
  DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(top_srcdir)/config/eu.am ChangeLog \
@@ -1438,8 +1438,8 @@
  ld_LDFLAGS = -rdynamic
  elflint_LDADD = $(libebl) $(libelf) $(libeu) $(libmudflap) -ldl
  findtextrel_LDADD = $(libdw) $(libelf) $(libmudflap)
---- elfutils/src/readelf.c
-+++ elfutils/src/readelf.c
+--- a/src/readelf.c
++++ b/src/readelf.c
 @@ -3949,10 +3949,11 @@ struct listptr
  #define listptr_offset_size(p)	((p)->dwarf64 ? 8 : 4)
  #define listptr_address_size(p)	((p)->addr64 ? 8 : 4)
@@ -1477,8 +1477,8 @@
  	    while (1)
  #endif
  	      error (EXIT_FAILURE, 0,
---- elfutils/src/strings.c
-+++ elfutils/src/strings.c
+--- a/src/strings.c
++++ b/src/strings.c
 @@ -43,6 +43,10 @@
  
  #include <system.h>
@@ -1516,8 +1516,8 @@
      }
  
    if (unlikely (elfmap == MAP_FAILED))
---- elfutils/src/strip.c
-+++ elfutils/src/strip.c
+--- a/src/strip.c
++++ b/src/strip.c
 @@ -45,6 +45,12 @@
  #include <libebl.h>
  #include <system.h>
@@ -1568,8 +1568,8 @@
  	{
  	  error (0, errno, gettext ("\
  cannot set access and modification date of '%s'"), fname);
---- elfutils/tests/ChangeLog
-+++ elfutils/tests/ChangeLog
+--- a/tests/ChangeLog
++++ b/tests/ChangeLog
 @@ -439,6 +439,8 @@
  
  2008-01-21  Roland McGrath  <roland@redhat.com>
@@ -1591,8 +1591,8 @@
  2005-05-24  Ulrich Drepper  <drepper@redhat.com>
  
  	* get-files.c (main): Use correct format specifier.
---- elfutils/tests/line2addr.c
-+++ elfutils/tests/line2addr.c
+--- a/tests/line2addr.c
++++ b/tests/line2addr.c
 @@ -124,7 +124,7 @@ main (int argc, char *argv[])
      {
        struct args a = { .arg = argv[cnt] };
@@ -1602,8 +1602,8 @@
  	{
  	default:
  	case 0:
---- elfutils/tests/Makefile.in
-+++ elfutils/tests/Makefile.in
+--- a/tests/Makefile.in
++++ b/tests/Makefile.in
 @@ -35,14 +35,15 @@ build_triplet = @build@
  host_triplet = @host@
  DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
