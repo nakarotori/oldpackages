@@ -81,7 +81,7 @@ CONFIGURE_VARS += \
 CONFIGURE_ARGS += \
 	--enable-daemon \
 	--enable-cli \
-	--disable-gtk \
+	--without-gtk \
 	--enable-largefile \
 	--enable-lightweight
 
