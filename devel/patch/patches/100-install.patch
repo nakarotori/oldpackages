@@ -1,8 +1,7 @@
-diff -urN patch-2.5.4.orig/Makefile.in patch-2.5.4/Makefile.in
---- patch-2.5.4.orig/Makefile.in	2008-06-11 10:08:08.000000000 +0200
-+++ patch-2.5.4/Makefile.in	2008-06-11 10:08:26.000000000 +0200
-@@ -42,12 +42,12 @@
- VERSION = @VERSION@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -44,12 +44,12 @@ PACKAGE_NAME = @PACKAGE_NAME@
+ PACKAGE_VERSION = @PACKAGE_VERSION@
  
  prefix = @prefix@
 -exec_prefix = @exec_prefix@
