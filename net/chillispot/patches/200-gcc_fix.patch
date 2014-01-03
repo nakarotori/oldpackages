@@ -1,7 +1,6 @@
-diff -Naur chillispot-1.1.0/src/tun.c chillispot-1.1.0.patched/src/tun.c
---- chillispot-1.1.0/src/tun.c	2006-09-24 20:48:25.000000000 +0300
-+++ chillispot-1.1.0.patched/src/tun.c	2009-10-20 02:08:49.000000000 +0300
-@@ -366,7 +366,7 @@
+--- a/src/tun.c
++++ b/src/tun.c
+@@ -366,7 +366,7 @@ int tun_addaddr(struct tun_t *this,
    this->addrs++;
    return 0;
  
@@ -10,7 +9,7 @@ diff -Naur chillispot-1.1.0/src/tun.c chillispot-1.1.0.patched/src/tun.c
  
    int fd;
    struct ifaliasreq      areq;
-@@ -445,7 +445,7 @@
+@@ -445,7 +445,7 @@ int tun_setaddr(struct tun_t *this,
  #if defined(__linux__)
    ifr.ifr_netmask.sa_family = AF_INET;
  
@@ -19,7 +18,7 @@ diff -Naur chillispot-1.1.0/src/tun.c chillispot-1.1.0.patched/src/tun.c
    ((struct sockaddr_in *) &ifr.ifr_addr)->sin_len = 
      sizeof (struct sockaddr_in);
    ((struct sockaddr_in *) &ifr.ifr_dstaddr)->sin_len = 
-@@ -497,7 +497,7 @@
+@@ -497,7 +497,7 @@ int tun_setaddr(struct tun_t *this,
      ((struct sockaddr_in *) &ifr.ifr_netmask)->sin_addr.s_addr = 
        netmask->s_addr;
  
@@ -28,7 +27,7 @@ diff -Naur chillispot-1.1.0/src/tun.c chillispot-1.1.0.patched/src/tun.c
      ((struct sockaddr_in *) &ifr.ifr_addr)->sin_addr.s_addr = 
        netmask->s_addr;
  
-@@ -585,7 +585,7 @@
+@@ -585,7 +585,7 @@ int tun_route(struct tun_t *this,
    close(fd);
    return 0;
    
@@ -37,7 +36,7 @@ diff -Naur chillispot-1.1.0/src/tun.c chillispot-1.1.0.patched/src/tun.c
  
  struct {
    struct rt_msghdr rt;
-@@ -674,7 +674,7 @@
+@@ -674,7 +674,7 @@ int tun_new(struct tun_t **tun)
  #if defined(__linux__)
    struct ifreq ifr;
  
@@ -46,7 +45,7 @@ diff -Naur chillispot-1.1.0/src/tun.c chillispot-1.1.0.patched/src/tun.c
    char devname[IFNAMSIZ+5]; /* "/dev/" + ifname */
    int devnum;
    struct ifaliasreq areq;
-@@ -722,7 +722,7 @@
+@@ -722,7 +722,7 @@ int tun_new(struct tun_t **tun)
    ioctl((*tun)->fd, TUNSETNOCSUM, 1); /* Disable checksums */
    return 0;
    
