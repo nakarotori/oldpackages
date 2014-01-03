@@ -29,6 +29,7 @@ define Package/peercast
   DEPENDS:=+libpthread $(CXX_DEPENDS)
   TITLE:=P2P audio and video streaming server
   URL:=http://www.peercast.org/
+  SUBMENU:=Streaming
 endef
 
 define Package/peercast/conffiles

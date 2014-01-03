@@ -26,6 +26,7 @@ define Package/crtmpserver
   DEPENDS:=+libopenssl +libstdcpp +liblua
   TITLE:=C++ RTMP Server
   URL:=http://www.rtmpd.com/
+  SUBMENU:=Streaming
 endef
 
 define Package/crtmpserver/description

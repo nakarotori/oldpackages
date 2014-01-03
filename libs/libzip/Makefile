@@ -33,7 +33,7 @@ define Package/libzip-utils
 $(call Package/libzip/default)
   SECTION:=utils
   CATEGORY:=Utilities
-  SUBMENU:=compression
+  SUBMENU:=Compression
   TITLE+= utilities
   DEPENDS:=+libzip
 endef

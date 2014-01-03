@@ -23,7 +23,7 @@ CONFIGURE_ARGS += \
 	--enable-drivers
 
 define Package/unixodbc/Default
-  SUBMENU:=database
+  SUBMENU:=Database
   TITLE:=unixODBC
   URL:=http://www.unixodbc.org/
 endef

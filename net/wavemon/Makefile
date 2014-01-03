@@ -25,7 +25,7 @@ define Package/wavemon
   MAINTAINER:=Jonathan McCrohan <jmccrohan@gmail.com>
   TITLE:=N-curses based wireless network devices monitor
   DEPENDS:=+libncurses
-  SUBMENU:=wireless
+  SUBMENU:=Wireless
   URL:=http://eden-feed.erg.abdn.ac.uk/wavemon/
 endef
 

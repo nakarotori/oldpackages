@@ -27,7 +27,7 @@ define Package/mc
   DEPENDS:=+glib2 +libncurses $(LIBRPC_DEPENDS) $(ICONV_DEPENDS)
   TITLE:=midnight commander - a powerful file manager
   URL:=http://www.midnight-commander.org/
-  SUBMENU:=filemanager
+  SUBMENU:=Filemanager
   MENU:=1
 endef
 

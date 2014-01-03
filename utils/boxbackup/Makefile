@@ -20,7 +20,7 @@ PKG_INSTALL:=1
 include $(INCLUDE_DIR)/package.mk
 
 define Package/boxbackup/Default
-  SUBMENU:=backup
+  SUBMENU:=Backup
   SECTION:=utils
   CATEGORY:=Utilities
   URL:=http://www.boxbackup.org/

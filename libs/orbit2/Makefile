@@ -51,7 +51,7 @@ CONFIGURE_VARS += \
 define Package/orbit2
   SECTION:=xorg-libraries
   CATEGORY:=Xorg
-  SUBMENU:=libraries
+  SUBMENU:=Libraries
   TITLE:=ORBit2
   URL:=http://www.gnome.org/projects/ORBit2/
   DEPENDS:=+glib2 +libIDL2

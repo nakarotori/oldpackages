@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libsoup
-PKG_VERSION:=2.38.1
+PKG_VERSION:=2.42.3.1
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
-PKG_SOURCE_URL:=@GNOME/$(PKG_NAME)/2.38
-PKG_MD5SUM:=d13fb4968acea24c26b83268a308f580
+PKG_SOURCE_URL:=@GNOME/$(PKG_NAME)/2.42
+PKG_MD5SUM:=3845ac95c430fc1ae9962014713d4fba
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
@@ -22,15 +22,15 @@ define Package/libsoup
   CATEGORY:=Libraries
   TITLE:=libsoup
   URL:=http://live.gnome.org/LibSoup
-  DEPENDS:=+glib2 +libxml2 +libgnutls
+  DEPENDS:=+glib2 +libxml2 +libgnutls +libsqlite3
 endef
 
 define Build/Configure
 	$(call Build/Configure/Default, \
-		--enable-ssl \
 		--disable-glibtest \
 		--without-apache-httpd \
 		--without-gnome \
+		--disable-nls \
 	)
 endef
 

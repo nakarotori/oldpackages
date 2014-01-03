@@ -20,7 +20,7 @@ PKG_MD5SUM:=2551ce46ef785642f2c6768511f70ff3
 include $(INCLUDE_DIR)/package.mk
 
 define Package/speedtouch-usb-firmware
-  SUBMENU:=firmware
+  SUBMENU:=Firmware
   SECTION:=net
   CATEGORY:=Network
   TITLE:=SpeedTouch 330 ADSL USB firmware

@@ -18,7 +18,7 @@ PKG_MD5SUM:=1aa699ae279bf7a1140cf6cca02f9999
 include $(INCLUDE_DIR)/package.mk
 
 define Package/snort-wireless/Default
-  SUBMENU:=wireless
+  SUBMENU:=Wireless
   SECTION:=net
   CATEGORY:=Network
   DEPENDS:=+libnet0 +libpcap +libpcre

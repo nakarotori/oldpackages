@@ -23,7 +23,7 @@ define Package/aircrack-ptw
   DEPENDS:=+libpcap
   TITLE:=A tool using a new method for breaking WEP Keys
   URL:=http://www.cdc.informatik.tu-darmstadt.de/aircrack-ptw/
-  SUBMENU:=wireless
+  SUBMENU:=Wireless
 endef
 
 define Build/Configure

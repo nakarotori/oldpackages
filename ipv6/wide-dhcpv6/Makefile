@@ -21,7 +21,7 @@ define Package/wide-dhcpv6/Default
   SECTION:=net
   CATEGORY:=Network
   TITLE:=WIDE-DHCPv6
-  SUBMENU:=wide-dhcpv6
+  SUBMENU:=IP Addresses and Names
   DEPENDS:=+kmod-ipv6 
   URL:=https://sourceforge.net/projects/wide-dhcpv6/
   MAINTAINER:=Andrew Byrne <openwrt@andy.id.au>

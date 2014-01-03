@@ -20,7 +20,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/hdparm
   SECTION:=utils
   CATEGORY:=Utilities
-  SUBMENU:=disc
+  SUBMENU:=Disc
   TITLE:=Hard disk drive configuration utilitity
   URL:=http://sourceforge.net/projects/hdparm/
 endef

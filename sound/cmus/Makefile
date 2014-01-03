@@ -26,7 +26,6 @@ include $(INCLUDE_DIR)/nls.mk
 
 
 define Package/cmus/Default
-  SUBMENU:=cmus
   SECTION:=sound
   CATEGORY:=Sound
   MAINTAINER:=Peter Wagner <tripolar@gmx.at>
