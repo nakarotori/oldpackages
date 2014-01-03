@@ -1,7 +1,6 @@
-diff -u ngrep-1.45/Makefile.in ngrep-1.45.mod/Makefile.in
---- ngrep-1.45/Makefile.in	Tue Nov 28 15:35:37 2006
-+++ ngrep-1.45.mod/Makefile.in	Sat May 19 10:40:57 2007
-@@ -32,13 +32,13 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -32,13 +32,13 @@ MANDIR_INSTALL = $(mandir)/man8
  
  INSTALL = ./install-sh
  
