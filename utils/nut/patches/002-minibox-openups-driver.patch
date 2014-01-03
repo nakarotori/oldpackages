@@ -18,11 +18,9 @@ git-svn-id: svn://anonscm.debian.org/nut/trunk@3791 72a954d1-e00c-0410-aa02-d9c7
  create mode 100644 drivers/openups-hid.c
  create mode 100644 drivers/openups-hid.h
 
-diff --git a/data/driver.list.in b/data/driver.list.in
-index 11014d6..70b5e0f 100644
 --- a/data/driver.list.in
 +++ b/data/driver.list.in
-@@ -645,6 +645,8 @@
+@@ -640,6 +640,8 @@
  "Microsol"	"ups"	"5"	"Rhino 10.0"	"10000VA"	"rhino"
  "Microsol"	"ups"	"5"	"Rhino 20.0"	"20000VA"	"rhino"
  
@@ -31,11 +29,9 @@ index 11014d6..70b5e0f 100644
  "Mustek"	"ups"	"2"	"Powermust"	"400VA Plus"	"blazer_ser"
  "Mustek"	"ups"	"2"	"Powermust"	"600VA Plus"	"blazer_ser"
  "Mustek"	"ups"	"2"	"Powermust"	"800VA Pro"	"blazer_ser"
-diff --git a/drivers/Makefile.am b/drivers/Makefile.am
-index cd900cf..ad30874 100644
 --- a/drivers/Makefile.am
 +++ b/drivers/Makefile.am
-@@ -162,7 +162,8 @@ skel_LDADD = $(LDADD_DRIVERS)
+@@ -160,7 +160,8 @@ skel_LDADD = $(LDADD_DRIVERS)
  
  # USB
  USBHID_UPS_SUBDRIVERS = apc-hid.c belkin-hid.c cps-hid.c explore-hid.c \
@@ -45,7 +41,7 @@ index cd900cf..ad30874 100644
  usbhid_ups_SOURCES = usbhid-ups.c libhid.c libusb.c hidparser.c	\
   usb-common.c $(USBHID_UPS_SUBDRIVERS)
  usbhid_ups_LDADD = $(LDADD_DRIVERS) $(LIBUSB_LIBS)
-@@ -245,7 +246,7 @@ dist_noinst_HEADERS = apc-mib.h apc-hid.h baytech-mib.h bcmxcp.h	\
+@@ -237,7 +238,7 @@ dist_noinst_HEADERS = apc-mib.h apc-hid.
   powercom.h powerpanel.h powerp-bin.h powerp-txt.h powerware-mib.h raritan-pdu-mib.h	\
   safenet.h serial.h snmp-ups.h solis.h tripplite.h tripplite-hid.h 			\
   upshandler.h usb-common.h usbhid-ups.h powercom-hid.h compaq-mib.h idowell-hid.h \
@@ -54,9 +50,6 @@ index cd900cf..ad30874 100644
  
  # Define a dummy library so that Automake builds rules for the
  # corresponding object files.  This library is not actually built,
-diff --git a/drivers/openups-hid.c b/drivers/openups-hid.c
-new file mode 100644
-index 0000000..69a4a61
 --- /dev/null
 +++ b/drivers/openups-hid.c
 @@ -0,0 +1,360 @@
@@ -420,9 +413,6 @@ index 0000000..69a4a61
 +	openups_format_mfr,
 +	openups_format_serial,
 +};
-diff --git a/drivers/openups-hid.h b/drivers/openups-hid.h
-new file mode 100644
-index 0000000..c87b3d1
 --- /dev/null
 +++ b/drivers/openups-hid.h
 @@ -0,0 +1,38 @@
@@ -464,8 +454,6 @@ index 0000000..c87b3d1
 +extern subdriver_t openups_subdriver;
 +
 +#endif /* OPENUPS_HID_H */
-diff --git a/drivers/usbhid-ups.c b/drivers/usbhid-ups.c
-index 2d254c4..fcf628d 100644
 --- a/drivers/usbhid-ups.c
 +++ b/drivers/usbhid-ups.c
 @@ -27,7 +27,7 @@
@@ -501,11 +489,9 @@ index 2d254c4..fcf628d 100644
  #endif
  	NULL
  };
-diff --git a/scripts/upower/95-upower-hid.rules b/scripts/upower/95-upower-hid.rules
-index a9e18fe..c57ef75 100644
 --- a/scripts/upower/95-upower-hid.rules
 +++ b/scripts/upower/95-upower-hid.rules
-@@ -15,6 +15,7 @@ ENV{DEVTYPE}=="usb_interface", GOTO="up_hid_end"
+@@ -15,6 +15,7 @@ ENV{DEVTYPE}=="usb_interface", GOTO="up_
  ATTRS{idVendor}=="03f0", ENV{UPOWER_VENDOR}="Hewlett Packard"
  ATTRS{idVendor}=="0463", ENV{UPOWER_VENDOR}="Eaton"
  ATTRS{idVendor}=="047c", ENV{UPOWER_VENDOR}="Dell"
@@ -513,7 +499,7 @@ index a9e18fe..c57ef75 100644
  ATTRS{idVendor}=="050d", ENV{UPOWER_VENDOR}="Belkin"
  ATTRS{idVendor}=="051d", ENV{UPOWER_VENDOR}="APC"
  ATTRS{idVendor}=="0592", ENV{UPOWER_VENDOR}="Powerware"
-@@ -47,6 +48,9 @@ ATTRS{idVendor}=="0463", ATTRS{idProduct}=="ffff", ENV{UPOWER_BATTERY_TYPE}="ups
+@@ -47,6 +48,9 @@ ATTRS{idVendor}=="0463", ATTRS{idProduct
  # Dell
  ATTRS{idVendor}=="047c", ATTRS{idProduct}=="ffff", ENV{UPOWER_BATTERY_TYPE}="ups"
  
@@ -523,6 +509,3 @@ index a9e18fe..c57ef75 100644
  # Belkin
  ATTRS{idVendor}=="050d", ATTRS{idProduct}=="0375", ENV{UPOWER_BATTERY_TYPE}="ups"
  ATTRS{idVendor}=="050d", ATTRS{idProduct}=="0551", ENV{UPOWER_BATTERY_TYPE}="ups"
--- 
-1.8.0
-
