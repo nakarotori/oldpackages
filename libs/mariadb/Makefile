@@ -58,6 +58,13 @@ define Package/libmariadbclient-r
   DEPENDS+= +libpthread
 endef
 
+CMAKE_OPTIONS += \
+	-DCMAKE_BUILD_TYPE:String="MinSizeRel" \
+	-DWITH_PARTITION_STORAGE_ENGINE:BOOL=ON \
+	-DWITH_UNIT_TESTS:BOOL=OFF \
+	-DSTACK_DIRECTION=-1 \
+	# NOTE STACK_DIRECTION is hw dependent
+
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin $(1)/usr/bin $(1)/usr/include $(1)/usr/lib
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/mysql_config $(1)/usr/bin/
