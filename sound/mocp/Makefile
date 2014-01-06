@@ -8,12 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=moc
-PKG_VERSION:=2.4.4
+PKG_REV:=2586
+PKG_VERSION:=2586
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=ftp://ftp.daper.net/pub/soft/moc/stable/
-PKG_MD5SUM:=647c770a5542a4ae5437386807a89796
+PKG_SOURCE_URL:=svn://daper.net/moc/trunk
+PKG_SOURCE_SUBDIR:=moc-$(PKG_VERSION)
+PKG_SOURCE_VERSION:=$(PKG_REV)
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
