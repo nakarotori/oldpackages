@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=acpid
-PKG_VERSION:=2.0.10
+PKG_VERSION:=2.0.20
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://tedfelix.com/linux/
-PKG_MD5SUM:=d5dd88bcfaa4a0bf51905e95115da6df
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+PKG_SOURCE_URL:=@SF/acpid2
+PKG_MD5SUM:=1b740e6419cf45aaeb2bd78d589f27f9
 
 include $(INCLUDE_DIR)/package.mk
 
