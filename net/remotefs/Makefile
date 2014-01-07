@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=remotefs
-PKG_REV:=a4c25cee1e677c30acd559ff36ed1cfdc4b99c91
+PKG_REV:=967321dc5ccc4b8f880eed617670e04628fc1cd5
 PKG_VERSION:=$(PKG_REV)
 PKG_RELEASE:=1
 
