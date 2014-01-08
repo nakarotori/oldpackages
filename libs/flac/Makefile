@@ -37,7 +37,6 @@ define Build/Configure
 		--disable-sse \
 		--disable-3dnow \
 		--disable-altivec \
-		--disable-doxgen-docs \
 		--disable-local-xmms-plugin \
 		--disable-xmms-plugin \
 		--disable-ogg \
