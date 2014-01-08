@@ -80,7 +80,6 @@ CONFIGURE_ARGS+= \
 	--disable-translations \
 	--disable-latex \
 	--without-gphoto2 \
-	--disable-debug \
 	--without-snmp
 
 define Build/Configure
