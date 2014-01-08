@@ -43,7 +43,6 @@ TARGET_CFLAGS += $(FPIC)
 define Build/Configure
 	$(call Build/Configure/Default, \
 		--disable-python \
-		--disable-debug \
 		--without-debug \
 		$(SOFT_FLOAT_CONFIG_OPTION) \
 		--with-versioned=no \
