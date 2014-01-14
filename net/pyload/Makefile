@@ -26,7 +26,7 @@ define Package/pyload
   CATEGORY:=Network
   DEPENDS:=+python +pyopenssl +python-curl +python-crypto +python-django \
 	+python-expat +python-imaging-library +python-sqlite3 +js \
-	+tesseract +unrar
+	+tesseract +unrar +@LIBCURL_COOKIES
   TITLE:=A fast, lightweight and full featured download manager
   URL:=http://pyload.org
 endef
