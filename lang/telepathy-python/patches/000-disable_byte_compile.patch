@@ -1,0 +1,117 @@
+Index: telepathy-python-0.15.19/src/Makefile.in
+===================================================================
+--- telepathy-python-0.15.19.orig/src/Makefile.in	2010-12-03 17:09:48.000000000 +0100
++++ telepathy-python-0.15.19/src/Makefile.in	2014-01-14 18:25:11.187803508 +0100
+@@ -289,13 +289,13 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(generateddir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(generateddir)" || exit $$?; \
+ 	done || exit $$?; \
+-	if test -n "$$dlist"; then \
+-	  if test -z "$(DESTDIR)"; then \
+-	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(generateddir)" $$dlist; \
+-	  else \
+-	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(generateddir)" $$dlist; \
+-	  fi; \
+-	else :; fi
++#	if test -n "$$dlist"; then \
++#	  if test -z "$(DESTDIR)"; then \
++#	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(generateddir)" $$dlist; \
++#	  else \
++#	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(generateddir)" $$dlist; \
++#	  fi; \
++#	else :; fi
+ 
+ uninstall-nodist_generatedPYTHON:
+ 	@$(NORMAL_UNINSTALL)
+@@ -327,13 +327,13 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(versiondir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(versiondir)" || exit $$?; \
+ 	done || exit $$?; \
+-	if test -n "$$dlist"; then \
+-	  if test -z "$(DESTDIR)"; then \
+-	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(versiondir)" $$dlist; \
+-	  else \
+-	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(versiondir)" $$dlist; \
+-	  fi; \
+-	else :; fi
++#	if test -n "$$dlist"; then \
++#	  if test -z "$(DESTDIR)"; then \
++#	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(versiondir)" $$dlist; \
++#	  else \
++#	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(versiondir)" $$dlist; \
++#	  fi; \
++#	else :; fi
+ 
+ uninstall-nodist_versionPYTHON:
+ 	@$(NORMAL_UNINSTALL)
+@@ -365,13 +365,13 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(telepathydir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(telepathydir)" || exit $$?; \
+ 	done || exit $$?; \
+-	if test -n "$$dlist"; then \
+-	  if test -z "$(DESTDIR)"; then \
+-	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(telepathydir)" $$dlist; \
+-	  else \
+-	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(telepathydir)" $$dlist; \
+-	  fi; \
+-	else :; fi
++#	if test -n "$$dlist"; then \
++#	  if test -z "$(DESTDIR)"; then \
++#	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(telepathydir)" $$dlist; \
++#	  else \
++#	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(telepathydir)" $$dlist; \
++#	  fi; \
++#	else :; fi
+ 
+ uninstall-telepathyPYTHON:
+ 	@$(NORMAL_UNINSTALL)
+Index: telepathy-python-0.15.19/src/client/Makefile.in
+===================================================================
+--- telepathy-python-0.15.19.orig/src/client/Makefile.in	2010-12-03 17:09:48.000000000 +0100
++++ telepathy-python-0.15.19/src/client/Makefile.in	2014-01-14 18:25:58.330805727 +0100
+@@ -221,13 +221,13 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(clientdir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(clientdir)" || exit $$?; \
+ 	done || exit $$?; \
+-	if test -n "$$dlist"; then \
+-	  if test -z "$(DESTDIR)"; then \
+-	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(clientdir)" $$dlist; \
+-	  else \
+-	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(clientdir)" $$dlist; \
+-	  fi; \
+-	else :; fi
++#	if test -n "$$dlist"; then \
++#	  if test -z "$(DESTDIR)"; then \
++#	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(clientdir)" $$dlist; \
++#	  else \
++#	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(clientdir)" $$dlist; \
++#	  fi; \
++#	else :; fi
+ 
+ uninstall-clientPYTHON:
+ 	@$(NORMAL_UNINSTALL)
+Index: telepathy-python-0.15.19/src/server/Makefile.in
+===================================================================
+--- telepathy-python-0.15.19.orig/src/server/Makefile.in	2010-12-03 17:09:48.000000000 +0100
++++ telepathy-python-0.15.19/src/server/Makefile.in	2014-01-14 18:25:43.963109822 +0100
+@@ -224,13 +224,13 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(serverdir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(serverdir)" || exit $$?; \
+ 	done || exit $$?; \
+-	if test -n "$$dlist"; then \
+-	  if test -z "$(DESTDIR)"; then \
+-	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(serverdir)" $$dlist; \
+-	  else \
+-	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(serverdir)" $$dlist; \
+-	  fi; \
+-	else :; fi
++#	if test -n "$$dlist"; then \
++#	  if test -z "$(DESTDIR)"; then \
++#	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(serverdir)" $$dlist; \
++#	  else \
++#	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(serverdir)" $$dlist; \
++#	  fi; \
++#	else :; fi
+ 
+ uninstall-serverPYTHON:
+ 	@$(NORMAL_UNINSTALL)

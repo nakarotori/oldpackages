@@ -8,11 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=telepathy-python
-PKG_VERSION:=0.15.3
+PKG_VERSION:=0.15.19
 PKG_RELEASE:=1
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://telepathy.freedesktop.org/releases/telepathy-python/
-PKG_MD5SUM:=594a66a70764052e30df9428b5be52b2
+PKG_MD5SUM:=f7ca25ab3c88874015b7e9728f7f3017
+PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python-package.mk)
@@ -30,8 +31,8 @@ define Package/telepathy-python/description
   telepathy python bindings
 endef
 
-define Build/Compile
-	$(call Build/Compile/PyMod,,install --prefix="$(PKG_INSTALL_DIR)/usr")
+define Build/Configure
+	$(call Build/Configure/Default)
 endef
 
 define Package/telepathy-python/install
