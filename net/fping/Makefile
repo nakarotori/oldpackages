@@ -12,7 +12,7 @@ PKG_VERSION:=2.4b2_to-ipv6
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.fping.com/download/
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources
 PKG_MD5SUM:=3ad516765514249a40d3c5b6caab812a
 
 include $(INCLUDE_DIR)/package.mk
