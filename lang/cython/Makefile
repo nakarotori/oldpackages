@@ -12,7 +12,7 @@ PKG_VERSION:=0.10.3
 PKG_RELEASE:=1
 
 PKG_SOURCE:=Cython-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.cython.org/
+PKG_SOURCE_URL:=http://www.cython.org/release
 PKG_BUILD_DIR:=$(BUILD_DIR)/Cython-$(PKG_VERSION)
 PKG_MD5SUM:=684103ed37472d9beef3a38e0d5c431d
 
