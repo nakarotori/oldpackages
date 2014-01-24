@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dialog
-PKG_VERSION:=1.1-20120706
+PKG_VERSION:=1.2-20140112
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tgz
 PKG_SOURCE_URL:=ftp://invisible-island.net/dialog
-PKG_MD5SUM:=2e538305977178eb085a9859511c299d
+PKG_MD5SUM:=373dbe256bd3bcb37f5172aa77af9fa5
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -28,6 +28,8 @@ endef
 define Package/dialog/description
  A script-interpreter which provides a set of curses widgets.
 endef
+
+CONFIGURE_ARGS+= --with-ncurses
 
 define Package/dialog/install
 	$(INSTALL_DIR) $(1)/usr/bin
