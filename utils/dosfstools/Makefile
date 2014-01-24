@@ -8,20 +8,23 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dosfstools
-PKG_VERSION:=3.0.12
+PKG_VERSION:=3.0.25
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://fossies.org/linux/misc
-PKG_MD5SUM:=4c1f1e72b82371704f93ebdd3c7b6259
+PKG_SOURCE_URL:=http://daniel-baumann.ch/files/software/dosfstools \
+		http://fossies.org/linux/misc
+PKG_MD5SUM:=bd73002ace02d8e6cfc7c4696b8098e9
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/dosfstools/Default
   SECTION:=utils
   CATEGORY:=Utilities
   URL:=http://www.daniel-baumann.ch/software/dosfstools/
   SUBMENU:=Filesystem
+  DEPENDS:=+libiconv-full
 endef
 
 define Package/dosfsck
@@ -38,6 +41,10 @@ define Package/mkdosfs
   $(call Package/dosfstools/Default)
   TITLE:=mkdosfs
 endef
+
+TARGET_LDFLAGS += \
+		-L$(STAGING_DIR)/usr \
+		-liconv
 
 define Package/dosfsck/description
 	Utilities to create and check MS-DOS FAT filesystems.
