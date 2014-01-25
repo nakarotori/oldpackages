@@ -18,13 +18,14 @@ PKG_MD5SUM:=bd73002ace02d8e6cfc7c4696b8098e9
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
+ICONV_FULL:=1
 
 define Package/dosfstools/Default
   SECTION:=utils
   CATEGORY:=Utilities
   URL:=http://www.daniel-baumann.ch/software/dosfstools/
   SUBMENU:=Filesystem
-  DEPENDS:=+libiconv-full
+  DEPENDS:=+@BUILD_NLS $(ICONV_DEPENDS)
 endef
 
 define Package/dosfsck
@@ -42,10 +43,6 @@ define Package/mkdosfs
   TITLE:=mkdosfs
 endef
 
-TARGET_LDFLAGS += \
-		-L$(STAGING_DIR)/usr \
-		-liconv
-
 define Package/dosfsck/description
 	Utilities to create and check MS-DOS FAT filesystems.
 	(fsck.vfat and fsck.msdos for checking integrity of FAT volumes)
@@ -61,6 +58,8 @@ define Package/mkdosfs/description
 	(mkfs.vfat and mkfs.msdos for creating FAT volumes)
 endef
 
+LDFLAGS+=$(ICONV_LDFLAGS) $(TARGET_LDFLAGS) -L$(STAGING_DIR)/usr/lib/libiconv-full/lib -liconv
+
 define Build/Configure
 endef
 
@@ -70,6 +69,7 @@ define Build/Compile
 		OPTFLAGS="$(TARGET_CFLAGS) -D_FILE_OFFSET_BITS=64" \
 		PREFIX="/usr" \
 		SBINDIR="/usr/sbin" \
+		LDFLAGS="$(LDFLAGS)" \
 		all
 	$(MAKE) -C $(PKG_BUILD_DIR) \
 		$(TARGET_CONFIGURE_OPTS) \
@@ -83,19 +83,19 @@ define Package/dosfsck/install
 	$(INSTALL_DIR) $(1)/lib/functions/fsck
 	$(INSTALL_DATA) ./files/dosfsck.sh $(1)/lib/functions/fsck/
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/dosfsck $(1)/usr/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/fsck.fat $(1)/usr/sbin/
 	(cd $(1)/usr/sbin; ln -sf dosfsck fsck.msdos; ln -sf dosfsck fsck.vfat)
 endef
 
 define Package/dosfslabel/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/dosfslabel $(1)/usr/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/fatlabel $(1)/usr/sbin/
 endef
 
 define Package/mkdosfs/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/mkdosfs $(1)/usr/sbin/
-	(cd $(1)/usr/sbin; ln -sf mkdosfs mkfs.msdos; ln -sf mkdosfs mkfs.vfat)
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/mkfs.fat $(1)/usr/sbin/
+	(cd $(1)/usr/sbin; ln -sf mkfs.fat mkfs.msdos; ln -sf mkfs.fat mkfs.vfat)
 endef
 
 $(eval $(call BuildPackage,dosfsck))

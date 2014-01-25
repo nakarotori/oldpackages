@@ -1,0 +1,21 @@
+--- a/Makefile
++++ b/Makefile
+@@ -33,6 +33,7 @@ OPTFLAGS = -O2 -fomit-frame-pointer -D_G
+ WARNFLAGS = -Wall -Wextra -Wno-sign-compare -Wno-missing-field-initializers -Wmissing-prototypes -Wstrict-prototypes
+ DEBUGFLAGS = -g
+ CFLAGS += $(OPTFLAGS) $(WARNFLAGS) $(DEBUGFLAGS)
++LDFLAGS +=
+ 
+ VPATH = src
+ 
+@@ -41,8 +42,10 @@ all: build
+ build: fatlabel fsck.fat mkfs.fat
+ 
+ fatlabel: boot.o check.o common.o fat.o file.o io.o lfn.o charconv.o fatlabel.o
++	$(CC) -o $@ $^ $(LDFLAGS)
+ 
+ fsck.fat: boot.o check.o common.o fat.o file.o io.o lfn.o charconv.o fsck.fat.o
++	$(CC) -o $@ $^ $(LDFLAGS)
+ 
+ mkfs.fat: mkfs.fat.o
+ 
