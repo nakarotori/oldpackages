@@ -25,7 +25,7 @@ define Package/dosfstools/Default
   CATEGORY:=Utilities
   URL:=http://www.daniel-baumann.ch/software/dosfstools/
   SUBMENU:=Filesystem
-  DEPENDS:=+@BUILD_NLS $(ICONV_DEPENDS)
+  DEPENDS:=$(ICONV_DEPENDS)
 endef
 
 define Package/dosfsck
