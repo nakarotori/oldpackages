@@ -26,15 +26,15 @@ define Package/cutter
 endef
 
 define Package/cutter/description
-	Cutter is an open source program that allows Linux firewall 
-	administrators to abort TCP/IP connections routed over the 
+	Cutter is an open source program that allows Linux firewall
+	administrators to abort TCP/IP connections routed over the
 	firewall or router on which it is run.
 endef
-	
+
 define Build/Compile
 	$(TARGET_CC) $(PKG_BUILD_DIR)/cutter.c -o $(PKG_BUILD_DIR)/cutter
 endef
-	
+
 define Package/cutter/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cutter $(1)/usr/sbin/
