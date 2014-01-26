@@ -109,7 +109,7 @@ CONFIGURE_VARS += \
 CONFIGURE_ARGS += \
 	--with-newt="$(STAGING_DIR)/usr" \
 	--without-curses \
-	--without-ncurses 
+	--without-ncurses
 
 MAKE_FLAGS:= \
 	ARCH="$(LINUX_KARCH)" \
