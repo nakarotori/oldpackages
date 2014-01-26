@@ -77,7 +77,7 @@ $(call Package/gstreamer1/description/Default)
  .
  This package contains the GStreamer core library.
 endef
-  
+
 
 GST_VERSION:=1.0
 
@@ -187,4 +187,3 @@ $(eval $(call GstBuildLibrary,net,network classes))
 $(eval $(call BuildPackage,gstreamer1))
 $(eval $(call BuildPackage,gstreamer1-utils))
 $(eval $(call BuildPackage,libgstreamer1))
-
