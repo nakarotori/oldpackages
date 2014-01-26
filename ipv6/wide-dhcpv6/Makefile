@@ -22,7 +22,7 @@ define Package/wide-dhcpv6/Default
   CATEGORY:=Network
   TITLE:=WIDE-DHCPv6
   SUBMENU:=IP Addresses and Names
-  DEPENDS:=+kmod-ipv6 
+  DEPENDS:=+kmod-ipv6
   URL:=https://sourceforge.net/projects/wide-dhcpv6/
   MAINTAINER:=Andrew Byrne <openwrt@andy.id.au>
 endef
@@ -85,11 +85,11 @@ define Build/Configure
 	$(call Build/Configure/Default,--with-localdbdir=/var)
 endef
 
-define Build/Compile	
+define Build/Compile
 	$(MAKE) -C $(PKG_BUILD_DIR) \
 		DESTDIR="$(PKG_INSTALL_DIR)" \
 		EXTRA_CFLAGS="-include debug.h" \
-		all 
+		all
 endef
 
 define Package/wide-dhcpv6-client/conffiles
