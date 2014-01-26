@@ -30,7 +30,7 @@ endef
 
 define Package/libftdi1/description
   libFTDI - FTDI USB driver with bitbang mode
-  libFTDI is an open source library to talk to FTDI chips: FT232BM, FT245BM, FT2232C, FT2232H, FT4232H, FT2232D and FT245R, including the popular bitbang mode. 
+  libFTDI is an open source library to talk to FTDI chips: FT232BM, FT245BM, FT2232C, FT2232H, FT4232H, FT2232D and FT245R, including the popular bitbang mode.
   The library is linked with your program in userspace, no kernel driver required.
 endef
 
