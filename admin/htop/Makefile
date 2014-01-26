@@ -12,7 +12,7 @@ PKG_VERSION:=1.0.2
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=@SF/$(PKG_NAME)
+PKG_SOURCE_URL:=http://hisham.hm/htop/releases/$(PKG_VERSION)
 PKG_MD5SUM:=0d01cca8df3349c74569cefebbd9919e
 
 PKG_FIXUP:=autoreconf
@@ -25,7 +25,7 @@ define Package/htop
   CATEGORY:=Administration
   TITLE:=Interactive processes viewer
   DEPENDS:=+libncurses
-  URL:=http://htop.sourceforge.net/
+  URL:=http://hisham.hm/htop
 endef
 
 define Package/htop/description
