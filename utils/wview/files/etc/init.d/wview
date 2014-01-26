@@ -47,7 +47,7 @@ start() {
 
 stop() {
 	for i in RADROUTER WVIEWD HTMLD ALARMD CWOPD HTTP FTPD SSHD PMOND; do
-		PID_FILE=$(eval echo \$$(echo ${i}_PID)) 
+		PID_FILE=$(eval echo \$$(echo ${i}_PID))
 	        start-stop-daemon -K -s TERM -p	$PID_FILE
 	        rm -f $PID_FILE
 	done
