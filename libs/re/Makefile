@@ -1,4 +1,4 @@
-# 
+#
 # Copyright (C) 2010-2013 OpenWrt.org
 # Copyright (C) 2010 Alfred E. Heggestad
 #
