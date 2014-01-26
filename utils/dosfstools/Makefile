@@ -30,32 +30,32 @@ endef
 
 define Package/dosfsck
   $(call Package/dosfstools/Default)
-  TITLE:=dosfsck
+  TITLE:=dosfstools-fsck.fat
 endef
 
 define Package/dosfslabel
   $(call Package/dosfstools/Default)
-  TITLE:=dosfslabel
+  TITLE:=dosfstools-fatlabel
 endef
 
 define Package/mkdosfs
   $(call Package/dosfstools/Default)
-  TITLE:=mkdosfs
+  TITLE:=dosfstools-mkfs.fat
 endef
 
 define Package/dosfsck/description
 	Utilities to create and check MS-DOS FAT filesystems.
-	(fsck.vfat and fsck.msdos for checking integrity of FAT volumes)
+	(fsck.vfat and fsck.fat for checking integrity of FAT volumes)
 endef
 
 define Package/dosfslabel/description
 	Utilities to create and check MS-DOS FAT filesystems.
-	(dosfslabel for reading and writing labels of FAT volumes)
+	(fatlabel for reading and writing labels of FAT volumes)
 endef
 
 define Package/mkdosfs/description
 	Utilities to create and check MS-DOS FAT filesystems.
-	(mkfs.vfat and mkfs.msdos for creating FAT volumes)
+	(mkfs.vfat and mkfs.fat for creating FAT volumes)
 endef
 
 LDFLAGS+=$(ICONV_LDFLAGS) $(TARGET_LDFLAGS) -L$(STAGING_DIR)/usr/lib/libiconv-full/lib -liconv
@@ -84,7 +84,7 @@ define Package/dosfsck/install
 	$(INSTALL_DATA) ./files/dosfsck.sh $(1)/lib/functions/fsck/
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/fsck.fat $(1)/usr/sbin/
-	(cd $(1)/usr/sbin; ln -sf dosfsck fsck.msdos; ln -sf dosfsck fsck.vfat)
+	(cd $(1)/usr/sbin; ln -sf fsck.fat fsck.msdos; ln -sf fsckfat fsck.vfat)
 endef
 
 define Package/dosfslabel/install
