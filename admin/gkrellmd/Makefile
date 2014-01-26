@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gkrellmd
-PKG_VERSION:=2.3.1
+PKG_VERSION:=2.3.5
 PKG_RELEASE:=1
 
 PKG_SOURCE:=gkrellm-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=http://members.dslextreme.com/users/billw/gkrellm/
-PKG_MD5SUM:=009d8dddd3ce5cc83a4bb4d559ee922d
+PKG_MD5SUM:=e43a9416a6975e3be63d591bdeb33b04
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/gkrellm-$(PKG_VERSION)
 
