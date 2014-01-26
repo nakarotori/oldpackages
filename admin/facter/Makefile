@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=facter
-PKG_VERSION:=1.7.0
+PKG_VERSION:=1.7.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=${PKG_NAME}-${PKG_VERSION}.tar.gz
 PKG_SOURCE_URL:=http://downloads.puppetlabs.com/facter/
-PKG_MD5SUM:=50dd278ad91a6d9266aeebf444ba1a71
+PKG_MD5SUM:=cc3a08963234cec042982d0aa9b4dc39
 
 include $(INCLUDE_DIR)/package.mk
 
