@@ -1,6 +1,6 @@
 --- a/configure
 +++ b/configure
-@@ -5192,9 +5192,6 @@
+@@ -5192,9 +5192,6 @@ else
  fi
  
  
@@ -10,3 +10,62 @@
  if test "${ac_cv_c_compiler_gnu}" = "yes"; then
    NORMAL_CFLAGS="\
        -W \
+--- a/configure.in
++++ b/configure.in
+@@ -82,7 +82,7 @@ AM_CONDITIONAL(CROSS_COMPILING, test x$c
+ dnl ***********************************************************************
+ dnl set compiler/linker flags
+ dnl ***********************************************************************
+-INCLUDES="${INCLUDES} -I/usr/local/include"
++INCLUDES="${INCLUDES}"
+ AC_SUBST(INCLUDES)
+ SANE_SET_CFLAGS([$is_release])
+ SANE_SET_LDFLAGS
+@@ -332,30 +332,26 @@ if test -c /dev/urandom ; then
+     AC_DEFINE(HAVE_DEV_URANDOM, 1, [Is /dev/urandom available?])
+ fi
+ 
+-dnl added by PN 3/2/12 to detect cups
+-$as_echo "checking for cups"
+-if test -e /usr/include/cups/cups.h ; then
+-    AC_DEFINE(HAVE_CUPS, 1, [Is /usr/include/cups/cups.h available?])
+-	with_cups="yes"
+-	LIBS="-lcups  $LIBS"
+-else
+-	$as_echo "cups.h not found, you may want to install a cups development package"
+-	$as_echo "in order to autodetect network scanners in kodakaio."
+-	with_cups="no"
++
++AC_PATH_PROG(CUPS_CONFIG, cups-config)
++CUPS_LIBS=`$CUPS_CONFIG --libs`
++
++AC_CHECK_HEADERS([cups/cups.h])
++PKG_CHECK_MODULES([HAVE_CUPS], [libcups], [with_cups=yes], [with_cups=no])
++if test "x${have_cups}" = "xyes"; then
++    AC_DEFINE(HAVE_CUPS,[1],[Is cups/cups.h available?])
++    LIBS="$LIBS $CUPS_LIBS"
+ fi
+ 
+-dnl added by llagendijk 12/7/2012 to detect systemd for saned
+-$as_echo_n "Checking for systemd..."
+-if test -e /usr/include/systemd/sd-daemon.h ; then
+-    AC_DEFINE(HAVE_SYSTEMD, 1, [Is /usr/include/systemd/sd-daemon.h available?])
+-    with_systemd="yes"
+-    SYSTEMD_LIBS=" -lsystemd-daemon"
+-    AC_SUBST(SYSTEMD_LIBS)
+-    $as_echo "yes"
+-else
+-    with_systemd="no"
+-    $as_echo "no"
++
++AC_CHECK_HEADERS([systemd/sd-daemon.h])
++PKG_CHECK_MODULES([HAVE_SYSTEMD], [libsystemd-daemon], [with_systemd=yes], [with_systemd=no])
++if test "x${have_systemddaemon}" = "xyes"; then
++  AC_DEFINE(HAVE_SYSTEMD,[1],[Is systemd/sd-daemon.h available?])
++  SYSTEMD_LIBS=" -lsystemd-daemon"
+ fi
++AC_SUBST(SYSTEMD_LIBS)
++
+ 
+ dnl ***********
+ dnl USB Support
