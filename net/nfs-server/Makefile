@@ -11,7 +11,7 @@ PKG_NAME:=nfs-server
 PKG_VERSION:=2.2beta47
 PKG_RELEASE:=3
 
-PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/n/nfs-user-server
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources/
 PKG_SOURCE:=nfs-user-server_$(PKG_VERSION).orig.tar.gz
 PKG_MD5SUM:=79a29fe9f79b2f3241d4915767b8c511
 
