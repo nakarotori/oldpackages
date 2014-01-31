@@ -12,7 +12,7 @@ PKG_RELEASE:=1.11
 PKG_VERSION:=1.11
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.ccccoimbra.com/open2300/
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources/
 PKG_MD5SUM:=804576790840c3bc4a288f3e0f83ce4d
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
@@ -25,7 +25,7 @@ define Package/open2300
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=WS23XX weather station utilities
-  URL:=http://www.lavrsen.dk/twiki/bin/view/Open2300/WebHome
+  URL:=http://www.lavrsen.dk/foswiki/bin/view/Open2300/WebHome
   MAINTAINER:=Nuno Goncalves <nunojpg@gmail.com>
 endef
 
