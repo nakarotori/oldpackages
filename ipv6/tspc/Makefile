@@ -24,6 +24,7 @@ define Package/tspc
   CATEGORY:=Network
   TITLE:=Client for Hexago's (Freenet6's) IPv6 service
   URL:=http://www.hexago.com
+  DEPENDS:=@BROKEN
 endef
 
 define Package/tspc/description
