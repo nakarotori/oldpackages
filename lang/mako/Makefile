@@ -12,7 +12,7 @@ PKG_VERSION:=0.2.5
 PKG_RELEASE:=1
 
 PKG_SOURCE:=Mako-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.makotemplates.org/downloads/
+PKG_SOURCE_URL:=https://pypi.python.org/packages/source/M/Mako
 PKG_MD5SUM:=d8ca783630dc5e93970a2075532fa643
 
 PKG_BUILD_DEPENDS:=distribute/host
