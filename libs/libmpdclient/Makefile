@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libmpdclient
-PKG_VERSION:=2.4
+PKG_VERSION:=2.9
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=http://www.musicpd.org/download/libmpdclient/2
-PKG_MD5SUM:=8c166c5212dd95d538d3a35bb9ad4634
+PKG_MD5SUM:=4b101a36e5c0cf967dc063391260ddbf
 
 PKG_INSTALL:=1
 
