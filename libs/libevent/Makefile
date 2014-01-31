@@ -13,7 +13,7 @@ PKG_RELEASE:=2
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)-stable
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-stable.tar.gz
-PKG_SOURCE_URL:=http://www.monkey.org/~provos/
+PKG_SOURCE_URL:=https://github.com/downloads/libevent/libevent
 PKG_MD5SUM:=a00e037e4d3f9e4fe9893e8a2d27918c
 
 PKG_FIXUP:=autoreconf
