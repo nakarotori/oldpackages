@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=netio
-PKG_VERSION:=1.31
+PKG_VERSION:=1.32
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)$(subst .,,$(PKG_VERSION)).zip
 PKG_SOURCE_URL:=http://www.ars.de/ars/ars.nsf/f24a6a0b94c22d82862566960071bf5a/aa577bc4be573b05c125706d004c75b5/%24FILE/
-PKG_MD5SUM:=6b81e3c71b9dfa3bd60c53fa82e89085
+PKG_MD5SUM:=45f67f7e9e2ee598e8051379181dfeb4
 
 include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
