@@ -12,7 +12,7 @@ PKG_VERSION:=nightly
 PKG_RELEASE:=2
 
 PKG_SOURCE:=NoCatAuth-$(PKG_VERSION).tgz
-PKG_SOURCE_URL:=http://nocat.net/downloads/NoCatAuth/
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources
 PKG_MD5SUM:=b3a5f8d62b322a9409806037ab8d374e
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/NoCatAuth-$(PKG_VERSION)
