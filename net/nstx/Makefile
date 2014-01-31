@@ -12,7 +12,7 @@ PKG_VERSION:=1.1-beta6
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)_$(PKG_VERSION).orig.tar.gz
-PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/n/nstx/
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources
 PKG_MD5SUM:=275abd75a856b07a798b1f2360088cf5
 
 include $(INCLUDE_DIR)/package.mk
