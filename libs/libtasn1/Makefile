@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libtasn1
-PKG_VERSION:=1.4
+PKG_VERSION:=3.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=@GNU/libtasn1
-PKG_MD5SUM:=a733ecdfed3517910e627d24e050979f
+PKG_MD5SUM:=21ec021c534b0f30b2834ce233c70f15
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
@@ -24,7 +24,7 @@ define Package/libtasn1
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=An ASN.1 and DER structures manipulation library
-  URL:=ftp://ftp.gnutls.org/pub/gnutls/libtasn1/
+  URL:=https://www.gnu.org/software/libtasn1/
 endef
 
 define Package/libtasn1/description
@@ -40,15 +40,12 @@ CONFIGURE_ARGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/libtasn1-config $(1)/usr/bin/
 	$(INSTALL_DIR) $(1)/usr/include
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/libtasn1.h $(1)/usr/include/
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libtasn1.{a,so*} $(1)/usr/lib/
 	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libtasn1*.pc $(1)/usr/lib/pkgconfig/
-	$(SED) 's,-I$$$${prefix}/include,,g' $(1)/usr/bin/libtasn1-config
-	$(SED) 's,-L$$$${exec_prefix}/lib,,g' $(1)/usr/bin/libtasn1-config
 endef
 
 define Package/libtasn1/install
