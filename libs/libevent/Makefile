@@ -27,7 +27,7 @@ define Package/libevent
   CATEGORY:=Libraries
   TITLE:=Event notification library
   DEPENDS:=+librt
-  URL:=http://www.monkey.org/~provos/libevent/
+  URL:=http://libevent.org/
 endef
 
 define Package/libevent/description
@@ -40,6 +40,8 @@ define Package/libevent/description
 	network servers. An application just needs to call event_dispatch()
 	and then add or remove events dynamically without having to change
 	the event loop.
+	http://libevent.org/
+	http://www.monkey.org/~provos/libevent/
 endef
 
 TARGET_CFLAGS += $(FPIC)
