@@ -12,7 +12,7 @@ PKG_VERSION:=0.20
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=@SF/musicpd
+PKG_SOURCE_URL:=http://www.musicpd.org/download/mpc/0/
 PKG_MD5SUM:=24c81ad6afe6099e8d7a6826ef4b7105
 
 include $(INCLUDE_DIR)/package.mk
