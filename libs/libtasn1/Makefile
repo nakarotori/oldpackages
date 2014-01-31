@@ -12,11 +12,7 @@ PKG_VERSION:=1.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=ftp://ftp.gnutls.org/pub/gnutls/libtasn1/ \
-	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/libtasn1/ \
-	http://www.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
-	ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/gnutls/libtasn1/ \
-	http://josefsson.org/gnutls/releases/libtasn1/
+PKG_SOURCE_URL:=@GNU/libtasn1
 PKG_MD5SUM:=a733ecdfed3517910e627d24e050979f
 
 PKG_FIXUP:=autoreconf
