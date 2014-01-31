@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=nullmailer
-PKG_VERSION:=1.05
+PKG_VERSION:=1.13
 PKG_RELEASE:=4
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://untroubled.org/nullmailer/
-PKG_MD5SUM:=35124cc05f893efba1310e2ec7c876ff
+PKG_MD5SUM:=aaeb8746fbc082917b26d0827ccc9270
 
 include $(INCLUDE_DIR)/package.mk
 
