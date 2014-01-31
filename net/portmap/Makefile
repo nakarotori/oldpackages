@@ -12,7 +12,7 @@ PKG_VERSION:=6.0
 PKG_RELEASE:=4
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tgz
-PKG_SOURCE_URL:=http://neil.brown.name/portmap/
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources
 PKG_MD5SUM:=ac108ab68bf0f34477f8317791aaf1ff
 
 PKG_LICENSE:=BSD-4c
