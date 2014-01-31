@@ -12,8 +12,7 @@ PKG_VERSION:=2.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=https://sourceforge.net/projects/musicpd/files/libmpdclient/$(PKG_VERSION)/
-#PKG_SOURCE_URL:=@SF/musicpd/files/libmpdclient/$(PKG_VERSION)
+PKG_SOURCE_URL:=http://www.musicpd.org/download/libmpdclient/2
 PKG_MD5SUM:=8c166c5212dd95d538d3a35bb9ad4634
 
 PKG_INSTALL:=1
