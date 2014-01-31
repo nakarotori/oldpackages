@@ -12,7 +12,7 @@ PKG_VERSION:=1.0.13
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://user.cs.tu-berlin.de/~jutta/gsm/
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources/
 PKG_MD5SUM:=c1ba392ce61dc4aff1c29ea4e92f6df4
 
 PKG_LICENSE:=FREE
