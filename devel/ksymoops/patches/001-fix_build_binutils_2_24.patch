@@ -1,0 +1,23 @@
+--- a/ksymoops.c
++++ b/ksymoops.c
+@@ -9,8 +9,6 @@
+     Released under the GNU Public Licence, Version 2.
+ */
+ 
+-#define VERSION "2.4.11"
+-
+ #include "ksymoops.h"
+ #include <ctype.h>
+ #include <errno.h>
+--- a/ksymoops.h
++++ b/ksymoops.h
+@@ -5,6 +5,9 @@
+ 	Released under the GNU Public Licence, Version 2.
+ 
+ */
++#define PACKAGE "ksymoops"
++#define VERSION "2.4.11"
++#define PACKAGE_VERSION "2.4.11"
+ 
+ #include <bfd.h>
+ #include <sys/types.h>
