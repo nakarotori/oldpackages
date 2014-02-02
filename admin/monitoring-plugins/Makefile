@@ -7,12 +7,12 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=nagios-plugins
+PKG_NAME:=monitoring-plugins
 PKG_VERSION:=1.4.14
 PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://www.nagios-plugins.org/download
+PKG_SOURCE_URL:=https://www.monitoring-plugins.org/download
 PKG_MD5SUM:=a1835a48a777863ed2583de3c82446a9
 
 PKG_FIXUP:=patch-libtool
@@ -23,7 +23,7 @@ include $(INCLUDE_DIR)/package.mk
 
 comma:= ,
 
-define Package/nagios-plugins
+define Package/monitoring-plugins
   SECTION:=admin
   CATEGORY:=Administration
   DEPENDS:=$(CXX_DEPENDS) +libpq +libopenssl +libradiusclient-ng +libopenldap
@@ -44,9 +44,9 @@ CONFIGURE_ARGS += \
 	--with-ssh-command="/usr/bin/ssh" \
 	--with-nslookup-command="/usr/bin/nslookup"
 
-define Package/nagios-plugins/install
+define Package/monitoring-plugins/install
 	$(INSTALL_DIR) $(1)/usr/libexec/nagios
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/* $(1)/usr/libexec/nagios/
 endef
 
-$(eval $(call BuildPackage,nagios-plugins))
+$(eval $(call BuildPackage,monitoring-plugins))
