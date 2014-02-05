@@ -37,8 +37,7 @@ endef
 
 CONFIGURE_ARGS+= \
 	--enable-shared \
-	--enable-static \
-	--with-build-cc="$(HOSTCC)" \
+	--enable-static
 
 TARGET_CFLAGS+= $(FPIC) -std=c99
 
