@@ -31,7 +31,7 @@ endef
 
 define Build/Configure
 	$(call Build/Configure/Default, \
-		--prefix=/usr --with-linux-headers="$(LINUX_DIR)" \
+		--prefix=/usr \
 	)
 endef
 
