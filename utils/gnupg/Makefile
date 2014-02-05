@@ -49,10 +49,8 @@ CONFIGURE_ARGS += \
 	--disable-ldap \
 	--disable-hkp \
 	--disable-finger \
-	--disable-ftp \
 	--disable-dns-srv \
-	--enable-fake-curl \
-	--disable-regex \
+	--disable-regex
 
 MAKE_FLAGS += \
 	SUBDIRS="m4 intl zlib util mpi cipher tools g10 keyserver ${checks}" \
