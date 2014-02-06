@@ -43,7 +43,6 @@ define Build/Configure
 		--disable-examples \
 		--disable-oggtest \
 		--disable-vorbistest \
-		--disable-sdltest \
 	)
 endef
 
