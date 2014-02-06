@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=remotefs
-PKG_REV:=967321dc5ccc4b8f880eed617670e04628fc1cd5
+PKG_REV:=1.0
 PKG_VERSION:=$(PKG_REV)
 PKG_RELEASE:=1
 
@@ -38,6 +38,7 @@ endef
 define Package/remotefs-server
   $(call Package/remotefs)
   TITLE:=RemoteFS server
+  DEPENDS:=
 endef
 
 define Build/Compile
