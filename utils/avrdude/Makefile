@@ -38,6 +38,9 @@ CONFIGURE_ARGS+= \
 	--disable-doc \
 	--disable-parport \
 
+CONFIGURE_VARS += \
+	ac_cv_lib_elf_elf_begin=no \
+
 define Build/Compile
 	$(MAKE) -C $(PKG_BUILD_DIR) \
 		DESTDIR="$(PKG_INSTALL_DIR)" \
