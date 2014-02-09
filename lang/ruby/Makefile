@@ -27,6 +27,7 @@ PKG_MD5SUM:=03f5b08804927ceabe5122cb90f5d0a9
 PKG_BUILD_DEPENDS:=ruby/host
 PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=1
+PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
@@ -212,13 +213,6 @@ TARGET_LDFLAGS += -L$(PKG_BUILD_DIR)
 MAKE_FLAGS += \
 	DESTDIR="$(PKG_INSTALL_DIR)" \
 	SHELL="/bin/bash"
-
-define Build/Prepare
-$(call Build/Prepare/Default)
-	( cd $(PKG_BUILD_DIR) ; \
-		autoconf ; \
-	)
-endef
 
 define Package/ruby/install
 	$(INSTALL_DIR) $(1)/usr/bin
