@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=minicom
-PKG_VERSION:=2.3
+PKG_VERSION:=2.7
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://alioth.debian.org/download.php/2332/
-PKG_MD5SUM:=0ebe7a91898384ca906787cc4e2c3f25
+PKG_SOURCE_URL:=http://alioth.debian.org/download.php/3977/
+PKG_MD5SUM:=7044ca3e291268c33294f171d426dc2d
 
 PKG_FIXUP:=autoreconf
 
