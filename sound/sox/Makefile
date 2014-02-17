@@ -45,17 +45,9 @@ endef
 
 define Build/Configure
 	$(call Build/Configure/Default, \
-		--disable-external-gsm \
-		--disable-oss \
-		--enable-alsa \
-		--disable-libao \
 		--without-libltdl \
-		--with-ogg \
 		--with-flac \
 		--with-ffmpeg \
-		--without-amr-wb \
-		--without-amr-nb \
-		--without-samplerate \
 		--without-ladspa \
 		--$(if $(CONFIG_BUILD_PATENTED),with-mad,without-mad) \
 		--$(if $(CONFIG_BUILD_PATENTED),with-lame,without-lame) \
