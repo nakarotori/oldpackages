@@ -83,7 +83,6 @@ define Build/Configure
 		autoreconf -vif \
 	);
 	$(call Build/Configure/Default, \
-		--with-mp4v2 \
 		--without-xmms \
 		, \
 		FAAD2_CPPFLAGS="-fno-builtin-cos -fno-builtin-sin -fno-builtin-log" \
