@@ -18,11 +18,12 @@ PKG_MD5SUM:=7044ca3e291268c33294f171d426dc2d
 PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 define Package/minicom
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+libncurses
+  DEPENDS:=+libncurses +$(ICONV_DEPENDS)
   TITLE:=Terminal emulation program
   URL:=http://alioth.debian.org/projects/minicom/
   SUBMENU:=Terminal
