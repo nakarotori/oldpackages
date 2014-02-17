@@ -40,7 +40,6 @@ define Package/ices/install
 endef
 
 CONFIGURE_ARGS+= \
-    --with-ogg="$(STAGING_DIR)/usr/include" \
     --with-vorbis="$(STAGING_DIR)/usr/include" \
 
 define Build/Configure
