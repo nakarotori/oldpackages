@@ -39,8 +39,7 @@ TARGET_CFLAGS += $(FPIC)
 
 CONFIGURE_ARGS += \
 	--enable-shared \
-	--enable-static \
-	--with-pf_packet=yes
+	--enable-static
 
 CONFIGURE_VARS += \
 	ac_cv_libnet_endianess=$(ENDIANESS) \
