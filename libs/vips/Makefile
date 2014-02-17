@@ -34,7 +34,6 @@ TARGET_LDFLAGS+= \
 
 CONFIGURE_ARGS += \
 	--disable-cxx \
-	--disable-threads \
 	--without-cfitsio \
 	--without-fftw \
 	--without-lcms \
