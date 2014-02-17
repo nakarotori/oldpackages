@@ -50,7 +50,6 @@ project easier.
 endef
 
 CONFIGURE_ARGS+= \
-	--disable-wdb \
 	--disable-apache \
 	--disable-python \
 	--disable-perl \
