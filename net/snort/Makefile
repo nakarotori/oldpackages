@@ -75,7 +75,6 @@ endef
 
 CONFIGURE_ARGS += \
 	--prefix="/usr" \
-	--enable-flexresp \
 	--with-dnet-includes="$(STAGING_DIR)/usr/include" \
 	--with-dnet-libraries="$(STAGING_DIR)/usr/lib" \
 	--with-libpcap-includes="$(STAGING_DIR)/usr/include" \
