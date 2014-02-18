@@ -1,0 +1,15 @@
+--- a/tests/Makefile.am
++++ b/tests/Makefile.am
+@@ -1,7 +1,11 @@
+ noinst_PROGRAMS = test-dmap-client test-dmap-server
+ 
+ if HAVE_GEE
+-noinst_PROGRAMS += dacplisten dpapview dmapcopy dmapserve
++noinst_PROGRAMS += dacplisten dmapcopy dmapserve
++endif
++
++if BUILD_DPAPVIEW
++noinst_PROGRAMS += dpapview
+ endif
+ 
+ # Automake documentation mentions LDADD, but it does not work;
