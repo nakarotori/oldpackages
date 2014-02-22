@@ -38,18 +38,18 @@ endef
 
 define Build/Compile
 # file pkgdetails.c was imported from debian package base-installer version 1.130
-	$(TARGET_CC) $(TARGET_CFLAGS) $(TARGET_LDFLAGS) ./files/pkgdetails.c -o $(PKG_BUILD_DIR)/usr/share/debootstrap/pkgdetails
+	$(TARGET_CC) $(TARGET_CFLAGS) $(TARGET_LDFLAGS) ./files/pkgdetails.c -o $(PKG_BUILD_DIR)/pkgdetails
 endef
 
 define Package/debootstrap/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/usr/sbin/$(PKG_NAME) $(1)/usr/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(PKG_NAME) $(1)/usr/sbin
 	$(INSTALL_DIR) $(1)/usr/share/debootstrap
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/usr/share/debootstrap/pkgdetails $(1)/usr/share/debootstrap
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/usr/share/debootstrap/functions $(1)/usr/share/debootstrap
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/usr/share/debootstrap/devices.tar.gz $(1)/usr/share/debootstrap
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/pkgdetails $(1)/usr/share/debootstrap
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/functions $(1)/usr/share/debootstrap
+#	$(INSTALL_DATA) $(PKG_BUILD_DIR)/devices.tar.gz $(1)/usr/share/debootstrap
 	$(INSTALL_DIR) $(1)/usr/share/debootstrap/scripts
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/usr/share/debootstrap/scripts/* $(1)/usr/share/debootstrap/scripts
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/scripts/* $(1)/usr/share/debootstrap/scripts
 endef
 
 $(eval $(call BuildPackage,debootstrap))
