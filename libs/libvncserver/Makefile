@@ -39,7 +39,7 @@ CONFIGURE_ARGS += \
 	--without-xrecord \
 	--without-fbpm \
 	--without-dpms \
-	--without-filetransfer \
+	--without-tightvnc-filetransfer \
 	--without-macosx-native \
 	--without-ssl \
 	--without-avahi
