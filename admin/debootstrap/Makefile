@@ -9,15 +9,15 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=debootstrap
-PKG_VERSION:=1.0.56
+PKG_VERSION:=1.0.59
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-udeb_$(PKG_VERSION)_all.udeb
+PKG_SOURCE:=$(PKG_NAME)_$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/d/debootstrap \
 		http://ftp.acc.umu.se/mirror/cdimage/snapshot/Debian/pool/main/d/debootstrap
-PKG_MD5SUM:=d40d49488b15f52405f5ae3795a0f060
+PKG_MD5SUM:=ccbc443efd21470223ab2b7e6ef435f6
 
-UNPACK_CMD=ar -p "$(DL_DIR)/$(PKG_SOURCE)" data.tar.xz | xzcat | tar -C $(1) -xf -
+#UNPACK_CMD=ar -p "$(DL_DIR)/$(PKG_SOURCE)" data.tar.xz | xzcat | tar -C $(1) -xf -
 
 include $(INCLUDE_DIR)/package.mk
 
