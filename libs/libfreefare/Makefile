@@ -12,7 +12,7 @@ PKG_VERSION:=0.4.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=https://libfreefare.googlecode.com/files
+PKG_SOURCE_URL:=https://libfreefare.googlecode.com/files/
 PKG_MD5SUM:=98db0c9aea71bda1cdf99dc119987c8c
 
 PKG_FIXUP:=autoreconf
