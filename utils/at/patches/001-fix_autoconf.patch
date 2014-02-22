@@ -1,0 +1,36 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -76,10 +76,7 @@ dnl Checks for library functions.
+ AC_FUNC_VPRINTF
+ AC_FUNC_GETLOADAVG
+ AC_CHECK_FUNCS(getcwd mktime strftime setreuid setresuid sigaction waitpid)
+-AC_CHECK_HEADERS(security/pam_appl.h, [
+-  PAMLIB="-lpam"
+-  AC_DEFINE(HAVE_PAM, 1, [Define to 1 for PAM support])
+-])
++
+ 
+ dnl Checking for programs
+ 
+@@ -113,6 +110,21 @@ AC_ARG_WITH(etcdir,
+ )
+ AC_SUBST(ETCDIR)
+ 
++AC_ARG_WITH([pam], AS_HELP_STRING([--without-pam], [Build without libpam [default=no]]))
++AS_IF([test "x$with_pam" != "xno"],
++	[AC_CHECK_HEADERS([security/pam_appl.h],[have_pam=yes], [have_pam=no])],
++	[have_pam=no])
++
++AS_IF([test "x$have_pam" = "xyes"],
++	AC_CHECK_HEADERS([security/pam_appl.h], [
++	PAMLIB="-lpam"
++	AC_DEFINE([HAVE_PAM], [1], [Set to 1 if pam is installed.])],
++	[have_pam="no"]),
++	[AS_IF([test "x$with_pam" = "xyes"],
++	[AC_MSG_ERROR([libpam requested but not found])
++	])
++])
++
+ AC_ARG_WITH(systemdsystemunitdir,
+ [  --with-systemdsystemunitdir=PATH Directory for systemd service files],
+ [],

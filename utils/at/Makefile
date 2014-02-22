@@ -15,12 +15,14 @@ PKG_SOURCE:=$(PKG_NAME)_$(PKG_VERSION).orig.tar.gz
 PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/a/at
 PKG_MD5SUM:=d41cfd79033b6e49a8838add59a42ac6
 
+PKG_FIXUP:=autoreconf
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/at
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+libelf1 +PACKAGE_libpam:libpam
+  DEPENDS:=+libelf1
   TITLE:=Delayed job execution and batch processing
   URL:=http://packages.debian.org/stable/at
   MAINTAINER:=Luka Perkov <openwrt@lukaperkov.net>
@@ -36,6 +38,7 @@ EXTRA_CFLAGS:=-DNEED_YYWRAP -I$(PKG_BUILD_DIR) \
 	$(TARGET_LDFLAGS)
 
 CONFIGURE_ARGS+=--prefix=/usr \
+		--without-pam \
 		--with-daemon_username=nobody \
 		--with-daemon_groupname=nogroup \
 		--with-jobdir=/var/spool/cron/atjobs \
