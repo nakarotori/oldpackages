@@ -1,0 +1,10 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -4,6 +4,7 @@ set ( CMAKE_POLICY_DEFAULT_CMP0022 OLD )
+ cmake_policy ( VERSION 2.8.5 )
+ 
+ project ( openobex C )
++ENABLE_LANGUAGE(C CXX)
+ 
+ #
+ # The project version
