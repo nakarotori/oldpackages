@@ -24,7 +24,7 @@ include $(INCLUDE_DIR)/nls.mk
 define Package/mc
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+glib2 +libncurses $(LIBRPC_DEPENDS) $(ICONV_DEPENDS)
+  DEPENDS:=+glib2 +libncurses $(LIBRPC_DEPENDS) $(ICONV_DEPENDS) +!MC_DISABLE_VFS:libssh2
   TITLE:=midnight commander - a powerful file manager
   URL:=http://www.midnight-commander.org/
   SUBMENU:=Filemanager
@@ -44,31 +44,33 @@ define Package/mc/description
 endef
 
 CONFIGURE_ARGS += \
-	--enable-utf8 \
 	--disable-doxygen-doc \
 	--with-screen=ncurses \
 	--without-gpm-mouse \
 	--without-x \
 	ac_cv_search_addwstr=no
 
-ifeq ($(CONFIG_MC_DIFF_VIEWER),n)
+ifeq ($(CONFIG_MC_DIFF_VIEWER),)
 CONFIGURE_ARGS += \
 	--without-diff-viewer
 endif
 
-ifeq ($(CONFIG_MC_EDITOR),n)
+ifeq ($(CONFIG_MC_EDITOR),)
 CONFIGURE_ARGS += \
-	--without-edit
+	--without-internal-edit
 endif
 
-ifeq ($(CONFIG_MC_SUBSHELL),n)
+ifeq ($(CONFIG_MC_SUBSHELL),)
 CONFIGURE_ARGS += \
 	--without-subshell
 endif
 
 ifeq ($(CONFIG_MC_DISABLE_VFS),y)
 CONFIGURE_ARGS += \
-	--without-vfs
+	--disable-vfs
+else
+CONFIGURE_ARGS += \
+	--enable-vfs-sftp
 endif
 
 define Package/mc/install
