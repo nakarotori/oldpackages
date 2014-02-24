@@ -31,4 +31,10 @@ CMAKE_OPTIONS += \
         -DCMAKE_BUILD_TYPE=MinSizeRel \
         -DBUILD_DOCUMENTATION=OFF
 
+define Build/Prepare
+	$(CP) ./files/* $(PKG_BUILD_DIR)
+	$(Build/Prepare/Default)
+endef
+
+
 $(eval $(call BuildPackage,openobex))
