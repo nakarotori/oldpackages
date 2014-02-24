@@ -32,8 +32,9 @@ CMAKE_OPTIONS += \
         -DBUILD_DOCUMENTATION=OFF
 
 define Build/Prepare
-	$(CP) ./files/* $(PKG_BUILD_DIR)
 	$(Build/Prepare/Default)
+	$(RM) -f $(PKG_BUILD_DIR)/CMakeLists.txt
+	$(CP) ./files/CMakeLists.txt $(PKG_BUILD_DIR)/CMakeLists.txt
 endef
 
 
