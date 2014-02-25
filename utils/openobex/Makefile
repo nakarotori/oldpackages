@@ -37,6 +37,15 @@ define Build/Prepare
 	$(CP) ./files/CMakeLists.txt $(PKG_BUILD_DIR)/CMakeLists.txt
 endef
 
+define Build/InstallDev
+	$(INSTALL_DIR) $(1)/usr/include/openobex
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/openobex/*.h $(1)/usr/include/openobex/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libopenobex.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/openobex.pc $(1)/usr/lib/pkgconfig/
+endef
+
 define Package/openobex/install
 	$(INSTALL_DIR) $(1)/sbin
 	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/* $(1)/sbin/
