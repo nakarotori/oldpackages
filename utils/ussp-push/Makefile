@@ -15,23 +15,25 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://xmailserver.org
 PKG_MD5SUM:=5c44983ee27809867041feff6bb4423a
 
+PKG_FIXUP:=autoreconf
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/ussp-push
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+openobex
+  DEPENDS:=+openobex +bluez-libs
   TITLE:=ussp-push is a OBEX object pusher for Linux, using the BlueZ BlueTooth stack.
   URL:=http://xmailserver.org/ussp-push.html
 endef
 
-#define Build/Configure
-#	$(call Build/Configure/Default,--with-linux-headers=$(LINUX_DIR))
-#endef
+define Build/Configure
+	$(call Build/Configure/Default,--with-linux-headers=$(LINUX_DIR))
+endef
 
 define Package/ussp-push/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ussp-push $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ussp-push $(1)/usr/bin/
 endef
 
 

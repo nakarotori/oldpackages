@@ -1,0 +1,62 @@
+--- a/src/obex_main.c
++++ b/src/obex_main.c
+@@ -81,6 +81,10 @@ uint8_t *easy_readfile(const char *filen
+ int get_filesize(const char *filename);
+ void request_done(obex_t * handle, obex_object_t * object, int obex_cmd, int obex_rsp);
+ 
++/* removed since openobex 1.6 */
++int OBEX_UnicodeToChar(uint8_t *c, const uint8_t *uc, int size);
++int OBEX_CharToUnicode(uint8_t *uc, const uint8_t *c, int size);
++
+ 
+ 
+ int bt_debug;
+@@ -336,6 +340,48 @@ void obex_event(obex_t * handle, obex_ob
+ 	}
+ }
+ 
++int OBEX_UnicodeToChar(uint8_t *c, const uint8_t *uc, int size)
++{
++	int n;
++
++	if (uc == NULL || c == NULL)
++		return -1;
++
++	/* Make sure buffer is big enough! */
++	for (n = 0; uc[n*2+1] != 0; n++);
++
++	if (n >= size)
++		return -1;
++
++	for (n = 0; uc[n*2+1] != 0; n++)
++		c[n] = uc[n*2+1];
++	c[n] = 0;
++
++	return 0;
++}
++
++int OBEX_CharToUnicode(uint8_t *uc, const uint8_t *c, int size)
++{
++	int len, n;
++
++	if (uc == NULL || c == NULL)
++		return -1;
++
++	len = n = strlen((char *) c);
++	if (n*2+2 > size)
++		return -1;
++
++	uc[n*2+1] = 0;
++	uc[n*2] = 0;
++
++	while (n--) {
++		uc[n*2+1] = c[n];
++		uc[n*2] = 0;
++	}
++
++	return (len * 2) + 2;
++}
++
+ /*
+  * This function also comes directly from affix/profiles/obex/obex_client.c
+  * It calls __obex_connect() to connect to the device, and then uses the
