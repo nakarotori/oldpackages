@@ -12,7 +12,7 @@ PKG_VERSION:=24.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://alioth.debian.org/frs/download.php/file/3922
+PKG_SOURCE_URL:=https://alioth.debian.org/frs/download.php/latestfile/970
 PKG_MD5SUM:=03d7090835a5675314082847f1ac7910
 
 include $(INCLUDE_DIR)/package.mk
