@@ -12,7 +12,7 @@ PKG_VERSION:=2.7
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://alioth.debian.org/download.php/3977/
+PKG_SOURCE_URL:=https://alioth.debian.org/frs/download.php/latestfile/3
 PKG_MD5SUM:=7044ca3e291268c33294f171d426dc2d
 
 PKG_FIXUP:=autoreconf
