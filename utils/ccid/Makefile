@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ccid
-PKG_VERSION:=1.4.5
+PKG_VERSION:=1.4.15
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://alioth.debian.org/frs/download.php/latestfile/112
-PKG_MD5SUM:=cb9a77194ac335c39b262ea83a5b7d2e
+PKG_MD5SUM:=c195333c953f5530bc04a194b5ac1b71
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
@@ -23,7 +23,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/ccid
   SECTION:=libs
   CATEGORY:=Libraries
-  DEPENDS:=+libusb-1.0 +libpcsclite
+  DEPENDS:=+libusb-1.0 +libpcsclite +libpthread
   TITLE:=Generic USB CCID smart card reader driver
   URL:=http://pcsclite.alioth.debian.org/ccid.html
 endef
@@ -34,6 +34,7 @@ define Package/ccid/description
 endef
 
 TARGET_CFLAGS += $(FPIC)
+TARGET_LDFLAGS += -lpthread
 
 CONFIGURE_ARGS += \
 	--enable-embedded \
