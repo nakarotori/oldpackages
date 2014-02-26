@@ -13,7 +13,7 @@ PKG_VERSION:=2.4
 PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://alioth.debian.org/frs/download.php/3015
+PKG_SOURCE_URL:=https://alioth.debian.org/frs/download.php/latestfile/906
 PKG_MD5SUM:=a2a762fce0c96781965c8f9786a3d09d
 
 PKG_INSTALL:=1
