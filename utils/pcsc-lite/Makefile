@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pcsc-lite
-PKG_VERSION:=1.8.2
+PKG_VERSION:=1.8.11
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://alioth.debian.org/frs/download.php/latestfile/39
-PKG_MD5SUM:=cb7156346e9478c19085c918b605ed43
+PKG_MD5SUM:=73502ca4ba6526727f9f49c63d805408
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
