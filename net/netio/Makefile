@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2006-2011 OpenWrt.org
+# Copyright (C) 2006-2014 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -30,7 +30,7 @@ define Package/netio
 endef
 
 define Build/Compile
-	$(MAKE) -C $(PKG_BUILD_DIR) linux CC="$(TARGET_CC)"
+	$(MAKE) -C $(PKG_BUILD_DIR) linux CC="$(TARGET_CC)" CFLAGS="$(TARGET_CFLAGS) -DUNIX"
 endef
 
 define Package/netio/install
