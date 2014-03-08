@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # Copyright (C) 2008-2014 OpenWrt.org
 #

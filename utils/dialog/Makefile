@@ -8,7 +8,6 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dialog
-<<<<<<< HEAD
 PKG_VERSION:=1.2-20140112
 PKG_RELEASE:=1
 
