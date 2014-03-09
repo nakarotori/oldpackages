@@ -35,6 +35,8 @@ TARGET_CFLAGS+="-std=gnu99"
 
 #TARGET_LDFLAGS+=-lpthread
 
+CONFIGURE_ARGS+= --disable-documentation
+
 define Build/Configure
 	$(call Build/Configure/Default)
 endef
