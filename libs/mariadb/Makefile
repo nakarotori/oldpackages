@@ -10,7 +10,7 @@ include $(INCLUDE_DIR)/uclibc++.mk
 
 PKG_NAME:=mariadb
 #PKG_REV:=3976
-PKG_VERSION:=5.5.34
+PKG_VERSION:=5.5.36
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
@@ -21,12 +21,10 @@ PKG_SOURCE_URL:=\
 #PKG_SOURCE_VERSION:=$(PKG_REV)
 
 
-PKG_MD5SUM:=4f2f3da7687c64f589ce1e0fc6e3cfc9
+PKG_MD5SUM:=05f72957bedd8b1ea134c14173be9c25
 
 #PKG_BUILD_DEPENDS:=libncurses libreadline
 PKG_BUILD_PARALLEL:=1
-
-#PKG_FIXUP:=libtool
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -42,7 +40,7 @@ endef
 define Package/mariadb-server
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+libmariadbclient +libpthread +libncursesw +libreadline
+  DEPENDS:=+libmariadbclient +libpthread +libncursesw +libreadline +jemalloc
   TITLE:=MariaDB Server
   URL:=http://mariadb.org
   SUBMENU:=Database
@@ -58,12 +56,13 @@ define Package/libmariadbclient-r
   DEPENDS+= +libpthread
 endef
 
+
 CMAKE_OPTIONS += \
 	-DCMAKE_BUILD_TYPE:String="MinSizeRel" \
 	-DWITH_PARTITION_STORAGE_ENGINE:BOOL=ON \
 	-DWITH_UNIT_TESTS:BOOL=OFF \
 	-DSTACK_DIRECTION=-1 \
-	# NOTE STACK_DIRECTION is hw dependent
+	-DWITH_JEMALLOC:STRING=system
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin $(1)/usr/bin $(1)/usr/include $(1)/usr/lib
