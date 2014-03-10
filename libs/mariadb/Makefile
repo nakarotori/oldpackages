@@ -16,9 +16,6 @@ PKG_RELEASE:=1
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=\
 	http://fossies.org/linux/misc
-#PKG_SOURCE_PROTO:=bzr
-#PKG_SOURCE_SUBDIR:=$(PKG_NAME)
-#PKG_SOURCE_VERSION:=$(PKG_REV)
 
 
 PKG_MD5SUM:=05f72957bedd8b1ea134c14173be9c25
@@ -59,10 +56,15 @@ endef
 
 CMAKE_OPTIONS += \
 	-DCMAKE_BUILD_TYPE:String="MinSizeRel" \
+	-DCMAKE_PREFIX_PATH=$(STAGING_DIR)/usr \
 	-DWITH_PARTITION_STORAGE_ENGINE:BOOL=ON \
 	-DWITH_UNIT_TESTS:BOOL=OFF \
 	-DSTACK_DIRECTION=-1 \
-	-DWITH_JEMALLOC:STRING=system
+	-DWITH_JEMALLOC:STRING=system \
+	-DCURSES_USE_NCURSES=TRUE \
+	-DCURSES_LIBRARY="$(STAGING_DIR)/usr/lib/libncursesw.so" \
+	-DCURSES_INCLUDE_PATH="$(STAGING_DIR)/usr/include"
+
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin $(1)/usr/bin $(1)/usr/include $(1)/usr/lib
