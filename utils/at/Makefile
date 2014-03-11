@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2008-2013 OpenWrt.org
+# Copyright (C) 2008-2014 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -43,6 +43,9 @@ CONFIGURE_ARGS+=--prefix=/usr \
 		--with-daemon_groupname=nogroup \
 		--with-jobdir=/var/spool/cron/atjobs \
 		--with-atspool=/var/spool/cron/atspool
+
+CONFIGURE_VARS += \
+	ac_cv_header_security_pam_appl_h=no
 
 define Package/at/install
 	$(INSTALL_DIR) $(1)/usr/bin $(1)/usr/sbin $(1)/etc/init.d/
