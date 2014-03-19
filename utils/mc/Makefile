@@ -45,6 +45,7 @@ endef
 
 CONFIGURE_ARGS += \
 	--disable-doxygen-doc \
+	--disable-vfs-sftp \
 	--with-screen=ncurses \
 	--without-gpm-mouse \
 	--without-x \

@@ -15,6 +15,8 @@ PKG_SOURCE:=v$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/tvheadend/tvheadend/archive
 PKG_MD5SUM:=40d150628147396a9e7a7291bdaa983d
 
+PKG_USE_MIPS16:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/tvheadend
