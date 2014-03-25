@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=cutter
 PKG_VERSION:=1.03
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tgz
 PKG_SOURCE_URL:=http://www.lowth.com/cutter/software/
@@ -22,7 +22,6 @@ define Package/cutter
   CATEGORY:=Network
   TITLE:=allows an user to abort TCP/IP connections
   URL:=http://www.lowth.com/cutter/
-  DEPENDS:=@BROKEN
 endef
 
 define Package/cutter/description
@@ -32,7 +31,7 @@ define Package/cutter/description
 endef
 
 define Build/Compile
-	$(TARGET_CC) $(PKG_BUILD_DIR)/cutter.c -o $(PKG_BUILD_DIR)/cutter
+	$(TARGET_CC) $(TARGET_CFLAGS) $(PKG_BUILD_DIR)/cutter.c -o $(PKG_BUILD_DIR)/cutter
 endef
 
 define Package/cutter/install
