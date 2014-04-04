@@ -18,7 +18,7 @@ example:
     ## Hyperboria // cjdns
     https://github.com/cjdelisle/cjdns-openwrt
     ## telephony
-    git@git.nanl.de:/openwrt/telephony.git 
+    git@git.nanl.de:/openwrt/telephony.git
 
 other possibly interesting repositories:
 
