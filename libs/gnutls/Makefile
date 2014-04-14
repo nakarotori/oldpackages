@@ -106,6 +106,7 @@ CONFIGURE_ARGS+= \
 	--disable-rsa-export \
 	--disable-crywrap \
 	--without-p11-kit \
+	--disable-rpath \
 
 # XXX: AM_CFLAGS duplicates with CFLAGS
 MAKE_FLAGS:= \
@@ -116,7 +117,6 @@ ifeq ($(CONFIG_ARCH),"i386")
 endif
 
 TARGET_CFLAGS += $(FPIC)
-TARGET_LDFLAGS += -Wl,-rpath-link=$(STAGING_DIR)/usr/lib
 
 define Build/Configure
 	$(SED) 's,-I$$$${includedir},,g' $(PKG_BUILD_DIR)/configure
