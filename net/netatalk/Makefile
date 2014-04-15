@@ -55,6 +55,7 @@ CONFIGURE_ARGS += \
 	--disable-tcp-wrappers \
 	--with-cnid-default-backend=dbd \
 	--with-bdb="$(STAGING_DIR)/usr/" \
+	--with-dtrace=no \
 	--with-libgcrypt-dir="$(STAGING_DIR)/usr" \
 	--with-ssl-dir="$(STAGING_DIR)/usr" \
 	--with-uams-path="/usr/lib/uams" \
