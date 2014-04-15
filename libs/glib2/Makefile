@@ -27,6 +27,8 @@ include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
 
+HOST_CONFIGURE_ARGS += --disable-selinux \
+
 define Package/glib2
   SECTION:=libs
   CATEGORY:=Libraries
