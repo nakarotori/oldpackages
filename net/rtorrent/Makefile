@@ -31,7 +31,7 @@ define Package/rtorrent/Default
   CATEGORY:=Network
   TITLE:=BitTorrent client for ncurses
   URL:=http://libtorrent.rakshasa.no/
-  DEPENDS:=+libcurl +libtorrent +libncursesw +libsigcxx +libpthread
+  DEPENDS:=+libcurl +libtorrent +libncursesw +libsigcxx +libpthread +zlib
 endef
 
 define Package/rtorrent/Default/description
@@ -63,18 +63,29 @@ $(call Package/rtorrent/Default/description)
  This package is built with xmlrpc support
 endef
 
-TARGET_LDFLAGS += -lpthread -Wl,-rpath-link=$(STAGING_DIR)/usr/lib
+TARGET_LDFLAGS += -lncursesw -Wl,-rpath-link=$(STAGING_DIR)/usr/lib -lpthread -Wl,-rpath-link=$(STAGING_DIR)/usr/lib
+TARGET_CPPFLAGS:= \
+        -I$(STAGING_DIR)/usr/include/ncursesw \
+        $(TARGET_CPPFLAGS)
+
+CONFIGURE_VARS+= \
+	LIBS="-lz" \
 
 CONFIGURE_ARGS+= \
 	--enable-shared \
 	--disable-static \
-	--disable-debug
+	--disable-debug \
+	--with-ncursesw
 
 ifeq ($(BUILD_VARIANT),rpc)
 	CONFIGURE_ARGS += \
 		--with-xmlrpc-c
 endif
 
+ifeq ($(CONFIG_IPV6),y)
+	CONFIGURE_ARGS += \
+		--enable-ipv6
+endif
 
 define Build/Configure
 	( cd $(PKG_BUILD_DIR); ./autogen.sh );
