@@ -15,14 +15,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ruby
-PKG_VERSION:=1.9.3-p484
+PKG_VERSION:=1.9.3-p545
 PKG_RELEASE:=1
 
 PKG_LIBVER:=1.9
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=ftp://ftp.ruby-lang.org/pub/ruby/$(PKG_LIBVER)/
-PKG_MD5SUM:=03f5b08804927ceabe5122cb90f5d0a9
+PKG_MD5SUM:=4743c1dc48491070bae8fc8b423bc1a7
 
 PKG_BUILD_DEPENDS:=ruby/host
 PKG_INSTALL:=1
@@ -210,7 +210,9 @@ HOST_CONFIGURE_ARGS += \
 CONFIGURE_ARGS += \
 	--enable-shared \
 	--disable-rpath \
-	--with-ruby-version=minor
+	--enable-ipv6 \
+	--with-ruby-version=minor \
+	--with-iconv-dir=$(ICONV_PREFIX) \
 
 TARGET_LDFLAGS += -L$(PKG_BUILD_DIR)
 
@@ -299,7 +301,7 @@ define Package/ruby-core/install
 	find $(1) -name '*.h' | xargs rm -f
 endef
 
-define Package/ruby-cgi/install
+	define Package/ruby-cgi/install
 	$(INSTALL_DIR) $(1)/usr/lib/ruby/$(PKG_LIBVER)
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/ruby/$(PKG_LIBVER)/cgi $(1)/usr/lib/ruby/$(PKG_LIBVER)/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/ruby/$(PKG_LIBVER)/cgi.rb $(1)/usr/lib/ruby/$(PKG_LIBVER)/
