@@ -9,7 +9,6 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/uclibc++.mk
 
 PKG_NAME:=mariadb
-#PKG_REV:=3976
 PKG_VERSION:=5.5.36
 PKG_RELEASE:=1
 
@@ -29,7 +28,7 @@ include $(INCLUDE_DIR)/cmake.mk
 define Package/libmariadbclient/Default
   SECTION:=libs
   CATEGORY:=Libraries
-  DEPENDS:=$(CXX_DEPENDS) +zlib
+  DEPENDS:=$(CXX_DEPENDS) +zlib @BROKEN
   TITLE:=MariaDB client library
   URL:=http://mariadb.org
 endef
@@ -37,7 +36,7 @@ endef
 define Package/mariadb-server
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+libmariadbclient +libpthread +libncursesw +libreadline +jemalloc
+  DEPENDS:=+libmariadbclient +libpthread +libncursesw +libreadline +jemalloc @BROKEN
   TITLE:=MariaDB Server
   URL:=http://mariadb.org
   SUBMENU:=Database
@@ -50,7 +49,7 @@ endef
 define Package/libmariadbclient-r
   $(call Package/libmariadbclient/Default)
   TITLE += threadsafe
-  DEPENDS+= +libpthread
+  DEPENDS+= +libpthread @BROKEN
 endef
 
 
