@@ -36,7 +36,7 @@ endef
 
 define Package/httping
   $(call Package/httping/Default)
-  DEPENDS+= +libopenssl
+  DEPENDS+= +libopenssl $(INTL_DEPENDS)
   TITLE+= (with SSL support)
   VARIANT:=ssl
 endef
@@ -60,12 +60,14 @@ endef
 define Build/Configure
 endef
 
+TARGET_LDFLAGS += $(INTL_LDFLAGS) $(if $(INTL_FULL),-lintl)
+
 MAKE_FLAGS += \
 	DEBUG="no" \
 	FW="no" \
 	NC="no" \
 	TFO="no"
-	
+
 ifeq ($(BUILD_VARIANT),nossl)
 	MAKE_FLAGS += SSL="no"
 endif
