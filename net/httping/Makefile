@@ -26,6 +26,7 @@ define Package/httping/Default
   CATEGORY:=Network
   TITLE:=Httping is like 'ping' but for http-requests
   URL:=http://www.vanheusden.com/httping/
+  DEPENDS:=$(INTL_DEPENDS)
 endef
 
 define Package/httping/Default/description
@@ -36,7 +37,7 @@ endef
 
 define Package/httping
   $(call Package/httping/Default)
-  DEPENDS+= +libopenssl $(INTL_DEPENDS)
+  DEPENDS+= +libopenssl
   TITLE+= (with SSL support)
   VARIANT:=ssl
 endef
