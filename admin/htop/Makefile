@@ -13,7 +13,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://hisham.hm/htop/releases/$(PKG_VERSION)
-PKG_MD5SUM:=0d01cca8df3349c74569cefebbd9919e
+PKG_MD5SUM:=e768b9b55c033d9c1dffda72db3a6ac7
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
