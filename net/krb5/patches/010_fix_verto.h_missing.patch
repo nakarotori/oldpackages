@@ -1,0 +1,11 @@
+--- a/src/util/Makefile.in
++++ b/src/util/Makefile.in
+@@ -4,7 +4,7 @@ mydir=util
+ # configure scripts, so hide this.
+ ##WIN32##!if 0
+ SUBDIRS=support $(MAYBE_ET_@COM_ERR_VERSION@) $(MAYBE_SS_@SS_VERSION@) \
+-	profile send-pr gss-kernel-lib $(MAYBE_VERTO_@VERTO_VERSION@)
++	profile send-pr gss-kernel-lib $(MAYBE_VERTO_@VERTO_VERSION@) $(MAYBE_VERTO_k5)
+ ##WIN32##!endif
+ WINSUBDIRS=windows support et profile wshelper
+ BUILDTOP=$(REL)..
