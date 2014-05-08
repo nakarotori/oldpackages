@@ -12,7 +12,7 @@ PKG_VERSION:=0.2.1
 PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://nording.ru/projects/download/openrrcp/stable
+PKG_SOURCE_URL:=@SF/openrrcp
 PKG_MD5SUM:=e3d6097732af812b03dbbbedeced34d2
 
 include $(INCLUDE_DIR)/package.mk
@@ -21,7 +21,7 @@ define Package/openrrcp
   SECTION:=net
   CATEGORY:=Network
   TITLE:=OpenRRCP toolset for managing RRCP-capable Ethernet switches
-  URL:=http://openrrcp.org.ru/
+  URL:=http://openrrcp.sourceforge.net/
 endef
 
 define Package/openrrcp/description
