@@ -18,7 +18,6 @@ PKG_MD5SUM:=6814b47ceaa99880c754c5195aa1aac1
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
-PKG_REMOVE_FILES:=aclocal.m4
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -37,10 +36,8 @@ define Package/madplay/description
 	full support for ID3 tags.
 endef
 
-LDFLAGS='$(TARGET_LDFLAGS) -L$(STAGING_DIR)/usr/lib'
-
 CONFIGURE_VARS += \
-	LIBS="-lz"
+	CPPFLAGS="$(TARGET_CFLAGS) $(TARGET_CPPFLAGS)"
 
 CONFIGURE_ARGS += \
 	--enable-shared \
@@ -52,7 +49,6 @@ CONFIGURE_ARGS += \
 	--without-libintl-prefix \
 	--without-alsa \
 	--without-esd
-
 
 define Package/madplay/install
 	$(INSTALL_DIR) $(1)/usr/bin
