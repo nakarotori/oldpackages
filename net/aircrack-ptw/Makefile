@@ -12,7 +12,7 @@ PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.cdc.informatik.tu-darmstadt.de/aircrack-ptw/download
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources
 PKG_MD5SUM:=1d7d84d1e69189bc1397db3f565c183a
 
 include $(INCLUDE_DIR)/package.mk
@@ -22,7 +22,7 @@ define Package/aircrack-ptw
   CATEGORY:=Network
   DEPENDS:=+libpcap
   TITLE:=A tool using a new method for breaking WEP Keys
-  URL:=http://www.cdc.informatik.tu-darmstadt.de/aircrack-ptw/
+  URL:=
   SUBMENU:=Wireless
 endef
 
