@@ -12,8 +12,8 @@ PKG_VERSION:=1.0.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://weather.ou.edu/~apw/projects/stress
-PKG_MD5SUM:=a607afa695a511765b40993a64c6e2f4
+PKG_SOURCE_URL:=http://people.seas.harvard.edu/~apw/stress
+PKG_MD5SUM:=890a4236dd1656792f3ef9a190cf99ef
 
 PKG_INSTALL:=1
 
@@ -23,7 +23,7 @@ define Package/stress
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=stress is a simple stress utility
-  URL:=http://weather.ou.edu/~apw/projects/stress/
+  URL:=http://people.seas.harvard.edu/~apw/stress/
 endef
 
 define Package/stress/description
