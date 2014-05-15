@@ -12,7 +12,7 @@ PKG_VERSION:=0.2
 PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://znerol.ch/files
+PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources
 PKG_MD5SUM:=af169751efc7d87d500716a48d74ddc5
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
