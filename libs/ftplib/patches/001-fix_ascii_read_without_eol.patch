@@ -28,7 +28,7 @@ Last-Update: <YYYY-MM-DD>
 
 --- a/src/ftplib.c
 +++ b/src/ftplib.c
-@@ -220,7 +220,6 @@ static int readline(char *buf,int max,ne
+@@ -268,7 +268,6 @@ static int readline(char *buf,int max,ne
      	}
      	if (max == 1)
      	{

@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ftplib
-PKG_VERSION:=3.1-1
+PKG_VERSION:=4.0
 PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://nbpfaus.net/~pfau/ftplib/
-PKG_MD5SUM:=763be9c7e7b110776f88521a558dbc55
+PKG_SOURCE_URL:=http://nbpfaus.net/~pfau/ftplib
+PKG_MD5SUM:=846c30323ee64850559cecb311118460
 
 include $(INCLUDE_DIR)/package.mk
 
