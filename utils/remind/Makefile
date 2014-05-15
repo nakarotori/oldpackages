@@ -6,13 +6,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=remind
-PKG_VERSION:=03.01.12
+PKG_VERSION:=03.01.13
 PKG_RELEASE:=1
 
 PKG_SOURCE:=remind-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.roaringpenguin.com/files/download/
-PKG_MD5SUM:=de16cbfc3ee94defcb1abdf78b2ebcd1
-PKG_CAT:=zcat
+PKG_MD5SUM:=9b746d257eccd5961d61c649cf48305c
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/remind-$(PKG_VERSION)
 
