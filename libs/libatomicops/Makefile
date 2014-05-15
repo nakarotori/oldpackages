@@ -8,16 +8,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libatomicops
-PKG_VERSION:=1.2
-PKG_EXTRA_VERSION:=+cvs20080819.orig
-PKG_RELEASE:=2
+PKG_VERSION:=8c4daf9edfae755c09267d8a3fbd1fbd4f22a464
+PKG_RELEASE:=1
 
-PKG_SOURCE:=libatomic-ops_$(PKG_VERSION)$(PKG_EXTRA_VERSION).tar.gz
-PKG_SOURCE_URL:=http://ftp.de.debian.org/debian/pool/main/liba/libatomic-ops/
-PKG_MD5SUM:=bf26c062f28796e3daaab586a38abec1
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/ivmai/libatomic_ops
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_SOURCE_VERSION:=8c4daf9edfae755c09267d8a3fbd1fbd4f22a464
+PKG_RELEASE:=$(PKG_SOURCE_VERSION)
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/libatomic_ops-$(PKG_VERSION)
-
+PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
 
 PKG_USE_MIPS16:=0
