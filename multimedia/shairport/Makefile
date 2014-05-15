@@ -23,7 +23,7 @@ define Package/shairport
   SECTION:=multimedia
   CATEGORY:=Multimedia
   DEPENDS:=+libpthread +avahi-utils +libopenssl +libao +libavahi-client \
-	+alsa-utils
+	+alsa-utils +pulseaudio-daemon
   TITLE:=ShairPort AirPort Express emulator
 endef
 
@@ -39,11 +39,11 @@ endef
 
 TARGET_CFLAGS += $(FPIC)
 
-LIBS:=-lao -lm -lcrypto -lpthread -lavahi-common -lavahi-client -lasound
+LIBS:=-lpulse-simple -lpulse -lao -lm -lcrypto -lpthread -lavahi-common -lavahi-client -lasound
 
 MAKE_FLAGS += \
 	CFLAGS="$(TARGET_CFLAGS) $(TARGET_CPPFLAGS)" \
-	LDFLAGS="$(TARGET_LDFLAGS) $(LIBS)"
+	LDFLAGS="$(TARGET_LDFLAGS) -Wl,-rpath-link=$(STAGING_DIR)/usr/lib/pulseaudio $(LIBS)"
 
 define Package/shairport/install
 	$(INSTALL_DIR) $(1)/usr/sbin
