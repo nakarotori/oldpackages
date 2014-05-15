@@ -12,7 +12,7 @@ PKG_VERSION:=7.8.2
 PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.hiawatha-webserver.org/files/
+PKG_SOURCE_URL:=http://www.hiawatha-webserver.org/files/hiawatha-7
 PKG_MD5SUM:=8aff3f8c759871ea1d1ff22e98030332
 
 PKG_CONFIG_DEPENDS:= \
