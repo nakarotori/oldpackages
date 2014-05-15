@@ -195,11 +195,14 @@ endef
 define Package/gnutls-utils/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(CP) \
-		$(PKG_INSTALL_DIR)/usr/bin/gnutls-{cli,serv} \
+		$(PKG_INSTALL_DIR)/usr/bin/gnutls-cli-debug \
 		$(1)/usr/bin/
 ifeq ($(CONFIG_GNUTLS_OCSP),y)
 	$(CP) \
 		$(PKG_INSTALL_DIR)/usr/bin/ocsptool \
+		$(1)/usr/bin/
+	$(CP) \
+		$(PKG_INSTALL_DIR)/usr/bin/gnutls-serv \
 		$(1)/usr/bin/
 endif
 ifeq ($(CONFIG_GNUTLS_SRP),y)
