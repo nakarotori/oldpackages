@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dhcpcd
-PKG_VERSION:=6.1.0
+PKG_VERSION:=6.3.2
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=ftp://roy.marples.name/pub/dhcpcd
-PKG_MD5SUM:=6070040c57492925af9ac6aed980de2a
+PKG_MD5SUM:=bb7d8e8533161fbe0eee3b8830fdbdf4
 
 PKG_INSTALL:=1
 

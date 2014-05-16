@@ -1,6 +1,6 @@
 --- a/configure
 +++ b/configure
-@@ -369,7 +369,7 @@ int main(void) {
+@@ -391,7 +391,7 @@ int main(void) {
  	return getifaddrs(&ifap);
  }
  EOF
