@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dmapd
-PKG_VERSION:=0.0.65
+PKG_VERSION:=0.0.70
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.flyn.org/projects/dmapd
-PKG_MD5SUM:=caf9f6097a3fd4e0d9cb1cb4ee464e08
+PKG_MD5SUM:=f503bf95f79b5c1f9418cccf26203952
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
@@ -24,7 +24,7 @@ include $(INCLUDE_DIR)/nls.mk
 define Package/dmapd
   SECTION:=net
   CATEGORY:=Network
-  DEPENDS:=+libdmapsharing +libdb47 +vips +GraphicsMagick
+  DEPENDS:=+libdmapsharing +libdb47 +vips +GraphicsMagick +check
   TITLE:= dmapd
   URL:=http://www.flyn.org/projects/dmapd/
   MAINTAINER:=W. Michael Petullo <mike@flyn.org>
@@ -41,6 +41,9 @@ endef
 TARGET_CFLAGS+= -I$(STAGING_DIR)/usr/include/gstreamer-0.10/
 TARGET_LDFLAGS+= -L$(STAGING_DIR)/usr/include/gstreamer-0.10/ \
 	-Wl,-rpath-link=$(STAGING_DIR)/usr/lib \
+
+CONFIGURE_ARGS+= \
+	--disable-tests
 
 define Package/dmapd/install
 	$(INSTALL_DIR) $(1)/usr/sbin
