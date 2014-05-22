@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2010-2012 OpenWrt.org
+# Copyright (C) 2010-2014 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=vips
-PKG_VERSION:=7.34.0
-PKG_RELEASE:=2
+PKG_VERSION:=7.38.5
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.vips.ecs.soton.ac.uk/supported/7.34/
-PKG_MD5SUM:=520658fb5890103e446df629fb832795
+PKG_SOURCE_URL:=http://www.vips.ecs.soton.ac.uk/supported/7.38/
+PKG_MD5SUM:=768d1c0f50c5b2794bcab68383af33ee
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
@@ -26,7 +26,7 @@ define Package/vips
   CATEGORY:=Multimedia
   TITLE:=An image manipulation library
   URL:=http://www.vips.ecs.soton.ac.uk/
-  DEPENDS:=+glib2 +libexif +libjpeg +libpng +libxml2 $(INTL_DEPENDS)
+  DEPENDS:=+glib2 +libexif +libjpeg +libpng +libxml2 $(INTL_DEPENDS) +libstdcpp
 endef
 
 TARGET_LDFLAGS+= \
