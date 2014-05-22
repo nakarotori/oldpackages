@@ -150,14 +150,6 @@ ifeq ($(CONFIG_GNUTLS_CRYPTODEV),y)
 CONFIGURE_ARGS += --enable-cryptodev
 endif
 
-# XXX: AM_CFLAGS duplicates with CFLAGS
-MAKE_FLAGS:= \
-	AM_CFLAGS="" \
-
-ifeq ($(CONFIG_ARCH),"i386")
-	TARGET_CPPFLAGS += -DASM_X86 -DASM_X86_32
-endif
-
 TARGET_CFLAGS += $(FPIC)
 TARGET_LDFLAGS += -Wl,-rpath-link=$(STAGING_DIR)/usr/lib
 
