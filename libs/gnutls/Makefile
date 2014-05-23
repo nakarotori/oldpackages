@@ -223,7 +223,7 @@ define Package/libgnutls-openssl/install
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgnutls-openssl.so.* $(1)/usr/lib/
 endef
 
-
+$(eval $(call HostBuild))
 $(eval $(call BuildPackage,certtool))
 $(eval $(call BuildPackage,gnutls-utils))
 $(eval $(call BuildPackage,libgnutls))
