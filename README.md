@@ -26,3 +26,5 @@ other possibly interesting repositories:
     https://code.google.com/p/mediawrt
     https://github.com/FranciscoBorges/openwrt-printing-packages
 
+    updated rygel / gst-1.0 packages from
+    https://github.com/aandyl/openwrt-packages
