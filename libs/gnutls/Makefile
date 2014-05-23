@@ -18,7 +18,9 @@ PKG_MAINTAINER:=Nikos Mavrogiannopoulos <nmav@gnutls.org>
 
 PKG_INSTALL:=1
 PKG_LIBTOOL_PATHS:=. lib
+HOST_BUILD_DEPENDS:=libgcrypt/host libgpg-error/host
 
+include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
 
 
