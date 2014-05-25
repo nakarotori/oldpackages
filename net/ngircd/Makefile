@@ -8,14 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ngircd
-PKG_VERSION:=18
+PKG_VERSION:=21
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:= \
         http://ngircd.barton.de/pub/ngircd/ \
         ftp://ftp.berlios.de/pub/ngircd/
-PKG_MD5SUM:=4958c8b2d128cf3e9888af3f782892a1
+PKG_MD5SUM:=cd5d9d0019c781834bb6ba1c1a2ad9e0
 
 PKG_INSTALL:=1
 
