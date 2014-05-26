@@ -8,15 +8,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ngircd
-PKG_VERSION:=21
+PKG_VERSION:=21.1
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:= \
         http://ngircd.barton.de/pub/ngircd/ \
         ftp://ftp.berlios.de/pub/ngircd/
-PKG_MD5SUM:=cd5d9d0019c781834bb6ba1c1a2ad9e0
+PKG_MD5SUM:=e24342336d23df8d25cc3780c3903ead
 
+PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
@@ -68,6 +69,9 @@ define Package/ngircd-nossl/description
   This package is built without OpenSSL support.
 endef
 
+CONFIGURE_ARGS += \
+	--enable-ipv6
+
 ifeq ($(BUILD_VARIANT),ssl)
 	CONFIGURE_ARGS += \
 		--with-openssl="$(STAGING_DIR)/usr"
@@ -77,6 +81,11 @@ ifeq ($(BUILD_VARIANT),nossl)
 	CONFIGURE_ARGS += \
 		--without-openssl
 endif
+
+define Build/Configure
+	( cd $(PKG_BUILD_DIR); ./autogen.sh );
+	$(call Build/Configure/Default)
+endef
 
 define Package/ngircd/install
 	$(INSTALL_DIR) $(1)/usr/sbin
