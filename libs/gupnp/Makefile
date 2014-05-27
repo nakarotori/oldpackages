@@ -16,8 +16,8 @@ PKG_SOURCE_URL:=@GNOME/gupnp/0.20/
 PKG_MD5SUM:=1e1dad6ed4b762266ac5bfd5247cdddc
 
 PKG_FIXUP:=autoreconf
-PKG_BUILD_DEPENDS:=libgnutls libgupnp/host
-HOST_BUILD_DEPENDS:=libgssdp/host libgnutls/host vala/host gobject-introspection/host util-linux/host
+#PKG_BUILD_DEPENDS:=libgnutls libgupnp/host
+#HOST_BUILD_DEPENDS:=libgssdp/host libgnutls/host vala/host gobject-introspection/host util-linux/host
 
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
@@ -81,5 +81,5 @@ define Package/libgupnp/install
 		$(1)/usr/lib/
 endef
 
-$(eval $(call HostBuild))
+#$(eval $(call HostBuild))
 $(eval $(call BuildPackage,libgupnp))

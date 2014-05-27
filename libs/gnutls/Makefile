@@ -20,7 +20,7 @@ PKG_FIXUP:=autoreconf
 HOST_FIXUP:=autoreconf
 PKG_INSTALL:=1
 PKG_LIBTOOL_PATHS:=. lib
-HOST_BUILD_DEPENDS:=libgcrypt/host libgpg-error/host
+#HOST_BUILD_DEPENDS:=libgcrypt/host libgpg-error/host
 
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
@@ -227,7 +227,7 @@ define Package/libgnutls-openssl/install
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgnutls-openssl.so.* $(1)/usr/lib/
 endef
 
-$(eval $(call HostBuild))
+#$(eval $(call HostBuild))
 $(eval $(call BuildPackage,certtool))
 $(eval $(call BuildPackage,gnutls-utils))
 $(eval $(call BuildPackage,libgnutls))
