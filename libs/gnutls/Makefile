@@ -16,8 +16,8 @@ PKG_SOURCE_URL:=ftp://ftp.gnutls.org/gcrypt/gnutls/v3.2
 PKG_MD5SUM:=807bbf14a5b6c81a9249fffab5c3982b
 PKG_MAINTAINER:=Nikos Mavrogiannopoulos <nmav@gnutls.org>
 
-PKG_FIXUP:=autoreconf
-HOST_FIXUP:=autoreconf
+#PKG_FIXUP:=autoreconf
+#HOST_FIXUP:=autoreconf
 PKG_INSTALL:=1
 PKG_LIBTOOL_PATHS:=. lib
 #HOST_BUILD_DEPENDS:=libgcrypt/host libgpg-error/host
