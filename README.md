@@ -17,6 +17,9 @@ example:
 
     ## Hyperboria // cjdns
     https://github.com/cjdelisle/cjdns-openwrt
+    moved to
+    https://github.com/seattlemeshnet/meshbox
+
     ## telephony
     git@git.nanl.de:/openwrt/telephony.git
 
