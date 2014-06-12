@@ -47,6 +47,7 @@ define Build/Configure
 		--enable-static \
 		--enable-debug=no \
 		--disable-selinux \
+		--disable-xattr \
         --disable-fam \
         $(if $(ICONV_FULL),--with-libiconv=gnu) \
 		, \
