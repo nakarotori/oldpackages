@@ -15,6 +15,8 @@ PKG_SOURCE:=axTLS-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=@SF/axtls
 PKG_MD5SUM:=6d519bc3b5f20faa6ef8d423f5062241
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/libaxtls
