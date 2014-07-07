@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/u/uucp/
 PKG_MD5SUM:=64c54d43787339a7cced48390eb3e1d0
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 

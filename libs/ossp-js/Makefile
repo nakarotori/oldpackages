@@ -21,6 +21,7 @@ PKG_REMOVE_FILES:=aclocal.m4 libtool.m4
 include $(INCLUDE_DIR)/package.mk
 
 PKG_INSTALL=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 define Package/js/Default
  TITLE:=Mozilla JavaScript Engine
