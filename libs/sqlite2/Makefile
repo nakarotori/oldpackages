@@ -22,6 +22,7 @@ PKG_BUILD_DEPENDS:=libncurses libreadline
 PKG_FIXUP:=autoreconf
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
