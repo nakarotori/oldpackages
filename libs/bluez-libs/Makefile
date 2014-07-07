@@ -17,6 +17,7 @@ PKG_MD5SUM:=8c2ca546c0e7bb73dbd0e906fce7f6b1
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
