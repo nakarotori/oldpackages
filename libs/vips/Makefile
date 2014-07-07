@@ -19,6 +19,7 @@ include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
 
 PKG_INSTALL=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 define Package/vips
   $(call Package/vips/Default)
