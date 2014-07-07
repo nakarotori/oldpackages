@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=@SF/radlib
 PKG_SHA1SUM:=1b3feace6d0361436c9e4ce9b06856195a5ac1b1
 
 PKG_FIXUP:=autoreconf
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
