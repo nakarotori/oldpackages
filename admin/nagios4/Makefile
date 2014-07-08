@@ -21,7 +21,7 @@ define Package/nagios4
   SECTION:=admin
   CATEGORY:=Administration
   TITLE:=service and network monitoring program
-  DEPENDS:=+libpthread +microperl +libltdl
+  DEPENDS:=+libpthread +microperl +libltdl @BROKEN
   URL:=http://www.nagios.org/
 endef
 
