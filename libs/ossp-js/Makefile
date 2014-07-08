@@ -17,11 +17,11 @@ PKG_MD5SUM:=07f6cad7e03fd74a949588c3d4b333de
 
 PKG_FIXUP:=autoreconf
 PKG_REMOVE_FILES:=aclocal.m4 libtool.m4
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
 PKG_INSTALL=1
-PKG_CHECK_FORMAT_SECURITY:=0
 
 define Package/js/Default
  TITLE:=Mozilla JavaScript Engine
