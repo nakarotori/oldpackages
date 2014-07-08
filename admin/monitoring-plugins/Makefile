@@ -26,7 +26,7 @@ comma:= ,
 define Package/monitoring-plugins
   SECTION:=admin
   CATEGORY:=Administration
-  DEPENDS:=$(CXX_DEPENDS) +libpq +libopenssl +libradiusclient-ng +libopenldap
+  DEPENDS:=$(CXX_DEPENDS) +libpq +libopenssl +libradiusclient-ng +libopenldap @BROKEN
   TITLE:=plugins for Nagios checks
   URL:=http://nagiosplug.sourceforge.net/
 endef
