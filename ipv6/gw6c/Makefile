@@ -13,6 +13,8 @@ PKG_SOURCE_URL:=http://openwrt.linux-appliance.net/sources
 PKG_MD5SUM:=eeac7292a622681651ec3bd9b2e5b061
 PKG_BUILD_DIR:=$(BUILD_DIR)/gw6-$(PKG_VERSION)
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
 
