@@ -16,6 +16,8 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.digitemp.com/software/linux
 PKG_MD5SUM:=9be2e48db37920f21925ae6e88f83b84
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/digitemp/Default
