@@ -15,6 +15,8 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=ftp://ftp.lcp.nrl.navy.mil/pub/nuttcp
 PKG_MD5SUM:=a16d4d6d5def02cea980e57feaf30500
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/nuttcp/Default
