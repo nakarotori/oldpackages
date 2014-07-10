@@ -17,6 +17,7 @@ PKG_MD5SUM:=832d074183a36ee15b47553ed5962fce
 
 PKG_FIXUP:=autoreconf
 PKG_REMOVE_FILES:=autogen.sh aclocal.m4
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
