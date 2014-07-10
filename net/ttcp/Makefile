@@ -13,6 +13,8 @@ PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/ttcp
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/ttcp
