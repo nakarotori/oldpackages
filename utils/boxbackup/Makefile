@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://www.boxbackup.org/trac/export/2998/box/packages
 PKG_MD5SUM:=c4c4786a918a9c026f80833614c40a6b
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0	
 
 include $(INCLUDE_DIR)/package.mk
 
