@@ -19,6 +19,7 @@ PKG_FIXUP:=autoreconf
 PKG_LIBTOOL_PATHS:=src/db-4.2.52/build_unix
 PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
