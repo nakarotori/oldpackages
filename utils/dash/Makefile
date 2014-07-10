@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://gondor.apana.org.au/~herbert/dash/files
 PKG_MD5SUM:=f6cedb10ae7258adb5ab17a10ae80d51
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
