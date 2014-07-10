@@ -8,16 +8,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=netatalk
-PKG_VERSION:=3.1.0
+PKG_VERSION:=3.1.2
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=@SF/netatalk
-PKG_MD5SUM:=30ae75457ed4d28ae1c8620d5579cd60
+PKG_MD5SUM:=cfdf3dd2278d2900275e11b4423eacc0
 
 PKG_BUILD_PARALLEL:=1
-PKG_INSTALL:=1
 PKG_FIXUP:=autoreconf
+PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -25,7 +25,7 @@ define Package/netatalk
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Filesystem
-  DEPENDS:=+libdb47 +libgcrypt +libopenssl +avahi-daemon +libavahi-client $(LIBRPC_DEPENDS) +libmysqlclient
+  DEPENDS:=+libdb47 +libgcrypt +libopenssl +avahi-daemon +libavahi-client $(LIBRPC_DEPENDS) +libmysqlclient +libattr
   TITLE:=netatalk
   URL:=http://netatalk.sourceforge.net
   MAINTAINER:=W. Michael Petullo <mike@flyn.org>
@@ -44,6 +44,9 @@ endef
 TARGET_CFLAGS += -std=gnu99
 TARGET_LDFLAGS += $(LIBRPC)
 
+CONFIGURE_VARS += \
+	ac_cv_header_dns_sd_h=no \
+
 CONFIGURE_ARGS += \
 	--disable-afs \
 	--enable-hfs \
@@ -59,6 +62,7 @@ CONFIGURE_ARGS += \
 	--with-libgcrypt-dir="$(STAGING_DIR)/usr" \
 	--with-ssl-dir="$(STAGING_DIR)/usr" \
 	--with-uams-path="/usr/lib/uams" \
+	--without-acls \
 	--without-pam \
 	--disable-admin-group \
 	--disable-srvloc \
