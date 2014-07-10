@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://www.dtek.chalmers.se/~dvd/dist
 PKG_MD5SUM:=078788c9241ae16763529e1235502337
 
 PKG_FIXUP:=autoreconf
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
