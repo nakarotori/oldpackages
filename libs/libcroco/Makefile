@@ -9,6 +9,8 @@ PKG_SOURCE_URL:=@GNOME/$(PKG_NAME)/0.6/
 PKG_MD5SUM:=1429c597aa4b75fc610ab3a542c99209
 PKG_FIXUP:=autoreconf
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
 
