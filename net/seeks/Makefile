@@ -27,7 +27,7 @@ define Package/seeks
   CATEGORY:=Network
   TITLE:=An open P2P design for websearch
   URL:=http://www.seeks-project.info/site/
-  DEPENDS:=+libpthread +libevent2 +libstdcpp +libcurl +libpcre +libxml2 $(ICONV_DEPENDS) +zlib +protobuf +tokyocabinet
+  DEPENDS:=+libpthread +libevent2 +libstdcpp +libcurl +libpcre +libxml2 $(ICONV_DEPENDS) +zlib +protobuf +tokyocabinet @BROKEN
   MAINTAINER:=Obinou <obconseil@gmail.com>
 endef
 
@@ -50,8 +50,10 @@ endef
 
 
 CONFIGURE_VARS:= \
-	 CXXFLAGS="-I$(STAGING_DIR)/usr/include $(ICONV_CFLAGS) $(TARGET_CFLAGS)" \
-	 LDFLAGS="-L$(STAGING_DIR)/usr/lib      $(ICONV_LDFLAGS)" \
+	protobuf=false \
+	ac_cv_path_PROTOC=$(STAGING_DIR_HOST)/usr/bin/protoc \
+	CXXFLAGS="-I$(STAGING_DIR)/usr/include $(ICONV_CFLAGS) $(TARGET_CFLAGS)" \
+	LDFLAGS="-L$(STAGING_DIR)/usr/lib      $(ICONV_LDFLAGS)" \
 
 CONFIGURE_ARGS += \
 	--prefix=/usr \
