@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://savannah.nongnu.org/download/rdiff-backup/
 PKG_MD5SUM:=1a94dc537fcf74d6a3a80bd27808e77b
 
 PKG_BUILD_DEPENDS:=python
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python-package.mk)
