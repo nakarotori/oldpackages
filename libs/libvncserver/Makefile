@@ -16,6 +16,8 @@ PKG_SOURCE_URL:=@SF/libvncserver
 PKG_MD5SUM:=14af5bdae461df4666c18e5f83c150c4
 PKG_FIXUP:=autoreconf
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
 
