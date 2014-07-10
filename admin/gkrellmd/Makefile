@@ -17,6 +17,8 @@ PKG_MD5SUM:=e43a9416a6975e3be63d591bdeb33b04
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/gkrellm-$(PKG_VERSION)
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/gkrellmd
