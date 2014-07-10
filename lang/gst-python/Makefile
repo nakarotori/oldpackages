@@ -13,8 +13,10 @@ PKG_RELEASE:=1
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://gstreamer.freedesktop.org/src/gst-python/
 PKG_MD5SUM:=870440c6aad304112961ef5700d7698f
+
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
