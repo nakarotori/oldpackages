@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://www.bindshell.net/tools/sslcat/
 PKG_MD5SUM:=27a88e2143cbfe216e13e9493bacd32e
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
