@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://ushare.geexbox.org/releases/
 PKG_MD5SUM:=5bbcdbf1ff85a9710fa3d4e82ccaa251
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
