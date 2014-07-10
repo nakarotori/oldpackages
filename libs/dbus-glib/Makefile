@@ -16,8 +16,8 @@ PKG_SOURCE_URL:=http://dbus.freedesktop.org/releases/dbus-glib/
 PKG_MD5SUM:=86ea60ba2118a1b9deafe8257f6a6a1a
 
 PKG_FIXUP:=autoreconf
-
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
