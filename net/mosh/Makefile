@@ -24,7 +24,7 @@ define Package/mosh/Default
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=Mosh mobile shell
-	DEPENDS:=+libncursesw +libopenssl +protobuf
+	DEPENDS:=+libncursesw +libopenssl +protobuf @BROKEN
 	URL:=http://mosh.mit.edu/
 endef
 
