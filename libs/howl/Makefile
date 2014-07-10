@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://www.porchdogsoft.com/download/
 PKG_MD5SUM:=c389d3ffba0e69a179de2ec650f1fdcc
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
