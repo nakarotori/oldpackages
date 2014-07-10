@@ -18,6 +18,7 @@ PKG_MD5SUM:=735c50ebb15cb8be61bac400ee4afb1e
 PKG_FIXUP:=autoreconf
 PKG_LIBTOOL_PATHS:=. libgphoto2_port
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
