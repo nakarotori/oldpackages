@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://download.origo.ethz.ch/bemused-lnx-mpdhack/526
 PKG_MD5SUM:=aed8b41aed530e9177e43d9bebad10b7
 
 PKG_BUILD_PARALLEL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
