@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=ftp://ftp.eng.oar.net/pub/flow-tools/
 PKG_MD5SUM:=c9e0a8b53c79611b6bffcb9d510a5a38
 
 PKG_BUILD_DEPENDS:=+zlib
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
