@@ -25,6 +25,7 @@ PKG_FIXUP:=autoreconf
 PKG_REMOVE_FILES:=aclocal.m4 acinclude.m4
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
