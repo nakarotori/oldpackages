@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://www.live555.com/liveMedia/public/
 PKG_MD5SUM:=5c9753e027af08c065f156e2a0bec023
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
