@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://pagesperso-orange.fr/sebastien.godard
 PKG_MD5SUM:=e069daf192d259de905d7f8cdd85dc4e
 
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
