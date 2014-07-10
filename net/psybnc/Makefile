@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://www.psybnc.at/download/beta/
 PKG_MD5SUM:=4b893a92f914813450e0921b2894ad6c
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
