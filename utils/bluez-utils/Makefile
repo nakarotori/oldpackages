@@ -16,6 +16,7 @@ PKG_SOURCE_URL:=http://bluez.sourceforge.net/download
 PKG_MD5SUM:=4fc292b635ba7b442c7aaf5680199012
 
 PKG_FIXUP:=autoreconf
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
