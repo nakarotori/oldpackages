@@ -17,6 +17,8 @@ PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_URL:=svn://coreboot.org/coreboot/trunk/util/nvramtool
 PKG_SOURCE:=$(PKG_SOURCE_SUBDIR).tar.gz
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/nvramtool
