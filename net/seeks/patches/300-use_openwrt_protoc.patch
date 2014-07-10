@@ -1,0 +1,61 @@
+--- a/src/plugins/query_capture/Makefile.am
++++ b/src/plugins/query_capture/Makefile.am
+@@ -14,7 +14,7 @@ ACLOCAL_AMFLAGS=-I m4
+ protoc_inputs=db_query_record_msg.proto
+ protoc_outputs=db_query_record_msg.pb.cc db_query_record_msg.pb.h
+ $(protoc_outputs): $(protoc_inputs)
+-	protoc -I$(srcdir) -I$(srcdir)/../../proxy/ --cpp_out=. $<
++	@PROTOC@ -I$(srcdir) -I$(srcdir)/../../proxy/ --cpp_out=. $<
+ 
+ querycapturepluginlib_LTLIBRARIES=libquerycaptureplugin.la
+ dist_libquerycaptureplugin_la_SOURCES=query_capture.cpp db_query_record.cpp \
+@@ -34,4 +34,4 @@ nobase_dist_querycaptureplugindata_DATA=
+ EXTRA_DIST = \
+ 	$(protoc_inputs)
+ 
+-SUBDIRS = . tests
+\ No newline at end of file
++SUBDIRS = . tests
+--- a/src/plugins/uri_capture/Makefile.am
++++ b/src/plugins/uri_capture/Makefile.am
+@@ -13,7 +13,7 @@ ACLOCAL_AMFLAGS=-I m4
+ protoc_inputs = db_uri_record_msg.proto
+ protoc_outputs = db_uri_record_msg.pb.cc db_uri_record_msg.pb.h
+ $(protoc_outputs): $(protoc_inputs)
+-	protoc -I$(srcdir) -I$(srcdir)/../../proxy/ --cpp_out=. $<
++	@PROTOC@ -I$(srcdir) -I$(srcdir)/../../proxy/ --cpp_out=. $<
+ 
+ uricapturepluginlib_LTLIBRARIES=liburicaptureplugin.la
+ liburicaptureplugin_la_SOURCES=uri_capture.cpp db_uri_record.cpp uri_capture.h \
+@@ -32,4 +32,4 @@ nobase_dist_uricaptureplugindata_DATA=ur
+ EXTRA_DIST = \
+ 	$(protoc_inputs)
+ 
+-SUBDIRS = . tests
+\ No newline at end of file
++SUBDIRS = . tests
+--- a/src/proxy/Makefile.am
++++ b/src/proxy/Makefile.am
+@@ -34,7 +34,7 @@ protoc_inputs=db_record_msg.proto
+ protoc_outputs=db_record_msg.pb.h db_record_msg.pb.cc
+ 
+ $(protoc_outputs): $(protoc_inputs)
+-	protoc -I$(srcdir) --cpp_out=. $<
++	@PROTOC@ -I$(srcdir) --cpp_out=. $<
+ 
+ dist_libseeksuserdb_la_SOURCES=db_record.cpp db_obj.cpp user_db.cpp
+ nodist_libseeksuserdb_la_SOURCES=$(protoc_outputs)
+--- a/configure.in
++++ b/configure.in
+@@ -549,6 +549,11 @@ AC_SUBST(udbservice,true)
+ PKG_CHECK_MODULES([protobuf],[protobuf >= 2.2],protobuf=true,protobuf=false)
+ if test $protobuf = true ; then
+    AC_DEFINE(PROTOBUF,1,"Protocol buffers available")
++   AC_PATH_PROG(PROTOC, protoc, protoc)
++     if test -z "$PROTOC"; then
++       echo "Please install Protocol Buffers compiler (protoc)";
++       exit 1;
++     fi
+ fi
+ AM_CONDITIONAL(HAVE_PROTOBUF,test x$protobuf = xtrue)
+ if test $protobuf = false ; then
