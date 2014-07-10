@@ -16,6 +16,8 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/Phidgetlinux
 PKG_SOURCE_URL:=http://www.phidgets.com/downloads/libraries/
 PKG_MD5SUM:=eb48c7fc68ab189a0255c35e71d55ecd
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/phidget21
