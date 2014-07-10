@@ -18,6 +18,8 @@ PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=git://github.com/jkramer/shell-fm.git
 PKG_SOURCE_VERSION:=$(PKG_REV)
 
+PKG_CHECK_FORMAT_SECURITY:=0
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/shell-fm
