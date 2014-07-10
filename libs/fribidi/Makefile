@@ -20,6 +20,7 @@ PKG_LICENSE_FILES:=COPYING
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
