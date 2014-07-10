@@ -18,6 +18,7 @@ PKG_MD5SUM:=607e135c559be642f210094ad023dc65
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)$(VIMVER)
 PKG_BUILD_PARALLEL:=1
+PKG_CHECK_FORMAT_SECURITY:=0
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -91,6 +92,7 @@ define Package/xxd/description
 endef
 
 CONFIGURE_ARGS += \
+	--disable-acl \
 	--disable-gui \
 	--disable-gtktest \
 	--disable-xim \
