@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2007-2008 OpenWrt.org
+# Copyright (C) 2007-2014 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lame
 PKG_VERSION:=398-2
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=@SF/lame
 PKG_MD5SUM:=719dae0ee675d0c16e0e89952930ed35
@@ -50,11 +50,16 @@ define Package/lame-lib/description
 lame mp3 encoder libs
 endef
 
-define Build/Configure
-	$(call Build/Configure/Default, \
-	--disable-nasm \
-	)
-endef
+
+CONFIGURE_ARGS += \
+	--disable-nasm
+
+# gcc 4.9.0 error : i386 has xmmintrin.h but no SSE so
+# lame does not check with configure macros so deactivate
+ifeq ($(ARCH),i386)
+	CONFIGURE_VARS += \
+		ac_cv_header_xmmintrin_h=no
+endif
 
 
 define Package/lame/install
